@@ -1,6 +1,7 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <title>Lindsay | Marketing Portfolio</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -20,49 +22,19 @@
             background-color: #faf9f7;
             color: #242424;
             line-height: 1.6;
+
+            /* Space for fixed navigation */
+            padding-top: 75px;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(250, 249, 247, 0.95);
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid #e5e2de;
-        }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+        /* =========================
+           HERO
+        ========================= */
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #242424;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #8b6f5a;
-        }
-
-        /* Hero */
         .hero {
-            min-height: 100vh;
-            padding: 150px 8% 80px;
+            min-height: calc(100vh - 75px);
+            padding: 80px 8%;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -73,7 +45,7 @@
             max-width: 650px;
         }
 
-        .hero-text p:first-child {
+        .hero-text > p:first-child {
             text-transform: uppercase;
             letter-spacing: 3px;
             font-size: 13px;
@@ -98,6 +70,11 @@
             margin-bottom: 35px;
         }
 
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
         .button {
             display: inline-block;
             padding: 14px 25px;
@@ -119,10 +96,15 @@
         }
 
         .button-outline:hover {
+            background-color: #242424;
             color: white;
         }
 
-        /* Hero image placeholder */
+
+        /* =========================
+           HERO IMAGE
+        ========================= */
+
         .hero-image {
             width: 350px;
             height: 450px;
@@ -134,7 +116,11 @@
             text-align: center;
         }
 
-        /* General sections */
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
         section {
             padding: 100px 8%;
         }
@@ -150,7 +136,11 @@
             margin-bottom: 50px;
         }
 
-        /* About */
+
+        /* =========================
+           ABOUT
+        ========================= */
+
         .about {
             background-color: #eee9e3;
         }
@@ -166,7 +156,11 @@
             margin-bottom: 20px;
         }
 
-        /* Work */
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
         .projects {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -208,7 +202,11 @@
             text-decoration: none;
         }
 
-        /* Skills */
+
+        /* =========================
+           SKILLS
+        ========================= */
+
         .skills {
             background-color: #242424;
             color: white;
@@ -230,7 +228,11 @@
             font-size: 14px;
         }
 
-        /* Contact */
+
+        /* =========================
+           CONTACT
+        ========================= */
+
         .contact {
             text-align: center;
         }
@@ -254,7 +256,11 @@
             border-bottom: 1px solid #242424;
         }
 
-        /* Footer */
+
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
             text-align: center;
             padding: 30px;
@@ -263,25 +269,17 @@
             font-size: 13px;
         }
 
-        /* Mobile */
+
+        /* =========================
+           MOBILE
+        ========================= */
+
         @media (max-width: 800px) {
-
-            nav {
-                padding: 15px 5%;
-            }
-
-            nav ul {
-                gap: 12px;
-            }
-
-            nav a {
-                font-size: 12px;
-            }
 
             .hero {
                 flex-direction: column;
                 align-items: flex-start;
-                padding-top: 130px;
+                padding-top: 60px;
             }
 
             .hero-image {
@@ -301,26 +299,21 @@
             .section-title {
                 font-size: 34px;
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">LINDSAY.</div>
 
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <!-- =========================
+         HERO
+    ========================= -->
 
-
-    <!-- Hero Section -->
     <header class="hero">
 
         <div class="hero-text">
@@ -337,16 +330,17 @@
                 experiences, and strategic marketing solutions.
             </p>
 
-            <a href="#work" class="button">View My Work</a>
+            <a href="work.html" class="button">
+                View My Work
+            </a>
 
-            <a href="#contact" class="button button-outline">
+            <a href="contact.html" class="button button-outline">
                 Let's Connect
             </a>
 
         </div>
 
 
-        <!-- Replace this with your photo -->
         <div class="hero-image">
             <p>Your Photo Here</p>
         </div>
@@ -354,191 +348,24 @@
     </header>
 
 
-    <!-- About Section -->
-    <section class="about" id="about">
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
-        <h2 class="section-title">About Me</h2>
-
-        <div class="about-content">
-
-            <div>
-                <p>
-                    I'm a marketing student at Iowa State University with an
-                    interest in creative marketing, social media, content
-                    creation, and brand strategy.
-                </p>
-
-                <p>
-                    I enjoy combining creativity with strategy to create
-                    marketing that feels authentic while still achieving
-                    measurable results.
-                </p>
-            </div>
-
-            <div>
-                <p>
-                    Outside of school and work, I enjoy beauty, nail art,
-                    video editing, design, and finding new ways to turn
-                    creative ideas into something people can connect with.
-                </p>
-
-                <p>
-                    I'm always looking for opportunities to learn, create,
-                    and grow as a marketer.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Work Section -->
-    <section id="work">
-
-        <h2 class="section-title">Featured Work</h2>
-
-        <p class="section-intro">
-            A selection of projects that showcase my experience with
-            content creation, social media, design, and marketing strategy.
-        </p>
-
-
-        <div class="projects">
-
-            <div class="project">
-
-                <div class="project-number">01 / SOCIAL MEDIA</div>
-
-                <h3>Instagram Campaign</h3>
-
-                <p>
-                    Developed creative social media content designed to
-                    increase engagement, reach, and profile visits.
-                </p>
-
-                <a href="#">View Project →</a>
-
-            </div>
-
-
-            <div class="project">
-
-                <div class="project-number">02 / CONTENT</div>
-
-                <h3>TikTok Content</h3>
-
-                <p>
-                    Created short-form video content focused on increasing
-                    reach and connecting with new audiences.
-                </p>
-
-                <a href="#">View Project →</a>
-
-            </div>
-
-
-            <div class="project">
-
-                <div class="project-number">03 / DESIGN</div>
-
-                <h3>Brand & Visual Design</h3>
-
-                <p>
-                    Created visual concepts and social media designs that
-                    communicate a brand's personality and identity.
-                </p>
-
-                <a href="#">View Project →</a>
-
-            </div>
-
-
-            <div class="project">
-
-                <div class="project-number">04 / STRATEGY</div>
-
-                <h3>Marketing Strategy</h3>
-
-                <p>
-                    Applied marketing research and strategic thinking to
-                    develop recommendations for a real-world business
-                    challenge.
-                </p>
-
-                <a href="#">View Project →</a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-
-        <h2 class="section-title">What I Do</h2>
-
-        <p class="section-intro">
-            A combination of creative, analytical, and strategic skills
-            that I bring to marketing projects.
-        </p>
-
-
-        <div class="skill-list">
-
-            <div class="skill">Social Media Marketing</div>
-            <div class="skill">Content Creation</div>
-            <div class="skill">Marketing Strategy</div>
-            <div class="skill">SEO</div>
-            <div class="skill">Market Research</div>
-            <div class="skill">Marketing Analytics</div>
-            <div class="skill">Canva</div>
-            <div class="skill">Video Editing</div>
-            <div class="skill">Graphic Design</div>
-            <div class="skill">Event Planning</div>
-            <div class="skill">Leadership</div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-
-        <h2 class="section-title">Let's Connect</h2>
-
-        <p>
-            I'm always open to connecting with other marketers, creatives,
-            and potential employers. Feel free to reach out!
-        </p>
-
-        <div class="contact-links">
-
-            <a href="mailto:YOUR-EMAIL@example.com">
-                Email
-            </a>
-
-            <a href="https://www.linkedin.com/" target="_blank">
-                LinkedIn
-            </a>
-
-            <a href="https://github.com/" target="_blank">
-                GitHub
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- Footer -->
     <footer>
+
         © 2026 Lindsay. All rights reserved.
+
     </footer>
 
+
+    <!-- =========================
+         NAVIGATION JAVASCRIPT
+    ========================= -->
+
+    <script src="navigation.js"></script>
+
 </body>
+
 </html>
 ```
