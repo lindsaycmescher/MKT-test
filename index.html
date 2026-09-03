@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +8,6 @@
     <title>Lindsay | Marketing Portfolio</title>
 
     <style>
-
-        /* =========================
-           GENERAL STYLING
-        ========================= */
-
         * {
             margin: 0;
             padding: 0;
@@ -21,556 +17,375 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: linear-gradient(
-                135deg,
-                #fff0f7,
-                #ffffff,
-                #ffe1ef,
-                #fff7fb
-            );
-
-            color: #4a2940;
-            min-height: 100vh;
+            background-color: #faf9f7;
+            color: #242424;
+            line-height: 1.6;
         }
 
-
-        /* =========================
-           GLITTER BACKGROUND
-        ========================= */
-
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-
-            background-image:
-                radial-gradient(#ffffff 1px, transparent 1px),
-                radial-gradient(#f7a8cc 1px, transparent 1px);
-
-            background-size: 35px 35px, 55px 55px;
-            background-position: 0 0, 20px 20px;
-
-            opacity: 0.35;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-
-        /* =========================
-           NAVIGATION BAR
-        ========================= */
-
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
-            left: 0;
-
             width: 100%;
-            height: 75px;
-
-            background: rgba(255, 255, 255, 0.90);
-            backdrop-filter: blur(10px);
-
+            background-color: rgba(250, 249, 247, 0.95);
+            padding: 20px 8%;
             display: flex;
-            align-items: center;
             justify-content: space-between;
-
-            padding: 0 8%;
-
-            border-bottom: 2px solid #f6b4d4;
-
-            box-shadow: 0 4px 20px rgba(222, 110, 160, 0.15);
-
+            align-items: center;
             z-index: 1000;
+            border-bottom: 1px solid #e5e2de;
         }
-
-
-        /* Logo */
 
         .logo {
             font-size: 24px;
             font-weight: bold;
-
-            color: #d94f91;
-
-            letter-spacing: 2px;
+            letter-spacing: 1px;
         }
 
-
-        /* Navigation links */
-
-        .nav-links {
-            display: flex;
-            gap: 35px;
+        nav ul {
             list-style: none;
+            display: flex;
+            gap: 30px;
         }
 
-        .nav-links a {
+        nav a {
             text-decoration: none;
-
-            color: #633d55;
-
-            font-weight: 600;
-
+            color: #242424;
+            font-size: 14px;
             transition: 0.3s;
         }
 
-        .nav-links a:hover {
-            color: #d94f91;
-
-            text-shadow:
-                0 0 5px #f6a8ce,
-                0 0 10px #f6a8ce;
+        nav a:hover {
+            color: #8b6f5a;
         }
 
-
-        /* =========================
-           HERO SECTION
-        ========================= */
-
+        /* Hero */
         .hero {
             min-height: 100vh;
-
+            padding: 150px 8% 80px;
             display: flex;
             align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            padding: 120px 20px 80px;
+            justify-content: space-between;
+            gap: 60px;
         }
 
-        .hero-content {
-            max-width: 850px;
+        .hero-text {
+            max-width: 650px;
         }
 
-        .sparkle {
-            font-size: 28px;
-            color: #e76ca8;
+        .hero-text p:first-child {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            color: #8b6f5a;
         }
 
         .hero h1 {
-            font-size: clamp(45px, 7vw, 80px);
-
-            color: #d94f91;
-
-            margin: 15px 0;
-
-            text-shadow:
-                2px 2px 0 white,
-                4px 4px 12px rgba(217, 79, 145, 0.25);
+            font-size: clamp(50px, 7vw, 90px);
+            line-height: 1;
+            margin-bottom: 25px;
         }
 
-        .hero h2 {
-            font-size: 26px;
-            color: #70465f;
-
-            margin-bottom: 20px;
+        .hero h1 span {
+            color: #8b6f5a;
         }
 
-        .hero p {
+        .hero-description {
             font-size: 18px;
-            line-height: 1.7;
-
-            max-width: 650px;
-
-            margin: 0 auto 35px;
-
-            color: #6c5363;
+            max-width: 550px;
+            color: #666;
+            margin-bottom: 35px;
         }
 
-
-        /* =========================
-           BUTTONS
-        ========================= */
-
-        .buttons {
-            display: flex;
-            justify-content: center;
-            gap: 18px;
-
-            flex-wrap: wrap;
-        }
-
-        .btn {
+        .button {
             display: inline-block;
-
-            padding: 14px 28px;
-
-            border-radius: 30px;
-
+            padding: 14px 25px;
+            background-color: #242424;
+            color: white;
             text-decoration: none;
-
-            font-weight: bold;
-
+            margin-right: 10px;
             transition: 0.3s;
         }
 
-        .primary-btn {
-            background: linear-gradient(
-                135deg,
-                #e76ca8,
-                #d94f91
-            );
+        .button:hover {
+            background-color: #8b6f5a;
+        }
 
+        .button-outline {
+            background-color: transparent;
+            color: #242424;
+            border: 1px solid #242424;
+        }
+
+        .button-outline:hover {
             color: white;
-
-            box-shadow:
-                0 6px 15px rgba(217, 79, 145, 0.25);
         }
 
-        .secondary-btn {
-            background: white;
-
-            color: #d94f91;
-
-            border: 2px solid #e76ca8;
+        /* Hero image placeholder */
+        .hero-image {
+            width: 350px;
+            height: 450px;
+            background-color: #e8e1da;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            text-align: center;
         }
 
-        .btn:hover {
-            transform: translateY(-4px);
-
-            box-shadow:
-                0 8px 20px rgba(217, 79, 145, 0.3);
-        }
-
-
-        /* =========================
-           SECTIONS
-        ========================= */
-
+        /* General sections */
         section {
             padding: 100px 8%;
         }
 
         .section-title {
-            text-align: center;
-
-            font-size: 38px;
-
-            color: #d94f91;
-
-            margin-bottom: 15px;
+            font-size: 42px;
+            margin-bottom: 20px;
         }
 
-        .section-subtitle {
-            text-align: center;
-
-            color: #806275;
-
+        .section-intro {
+            max-width: 650px;
+            color: #666;
             margin-bottom: 50px;
         }
 
-
-        /* =========================
-           ABOUT
-        ========================= */
-
+        /* About */
         .about {
-            max-width: 850px;
-
-            margin: auto;
-
-            text-align: center;
-
-            background: rgba(255,255,255,0.8);
-
-            padding: 45px;
-
-            border-radius: 25px;
-
-            border: 1px solid #f5bfd9;
-
-            box-shadow:
-                0 10px 30px rgba(217,79,145,0.1);
+            background-color: #eee9e3;
         }
 
-        .about p {
-            line-height: 1.8;
-
-            color: #674f60;
-
-            font-size: 17px;
-        }
-
-
-        /* =========================
-           WORK
-        ========================= */
-
-        .work-grid {
+        .about-content {
             display: grid;
-
-            grid-template-columns:
-                repeat(auto-fit, minmax(250px, 1fr));
-
-            gap: 25px;
-
-            max-width: 1100px;
-
-            margin: auto;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
         }
 
-        .work-card {
-            background: white;
+        .about-content p {
+            color: #555;
+            margin-bottom: 20px;
+        }
 
-            border-radius: 22px;
+        /* Work */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
 
-            padding: 30px;
-
-            border: 1px solid #f5bfd9;
-
-            box-shadow:
-                0 8px 25px rgba(217,79,145,0.1);
-
+        .project {
+            border: 1px solid #ddd;
+            background-color: white;
+            padding: 35px;
             transition: 0.3s;
         }
 
-        .work-card:hover {
-            transform: translateY(-8px);
-
-            box-shadow:
-                0 15px 35px rgba(217,79,145,0.18);
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
-        .work-icon {
-            font-size: 35px;
+        .project-number {
+            font-size: 13px;
+            color: #8b6f5a;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
 
+        .project h3 {
+            font-size: 25px;
             margin-bottom: 15px;
         }
 
-        .work-card h3 {
-            color: #d94f91;
-
-            margin-bottom: 12px;
+        .project p {
+            color: #666;
+            margin-bottom: 20px;
         }
 
-        .work-card p {
-            color: #705b68;
-
-            line-height: 1.6;
+        .project a {
+            color: #242424;
+            font-weight: bold;
+            text-decoration: none;
         }
 
+        /* Skills */
+        .skills {
+            background-color: #242424;
+            color: white;
+        }
 
-        /* =========================
-           SKILLS
-        ========================= */
+        .skills .section-intro {
+            color: #bbb;
+        }
 
-        .skills-container {
-            max-width: 900px;
-
-            margin: auto;
-
+        .skill-list {
             display: flex;
-
-            justify-content: center;
-
             flex-wrap: wrap;
-
             gap: 15px;
         }
 
         .skill {
-            background: white;
-
-            color: #d94f91;
-
+            border: 1px solid #777;
             padding: 12px 20px;
-
-            border-radius: 30px;
-
-            border: 1px solid #f2afd0;
-
-            font-weight: 600;
-
-            box-shadow:
-                0 5px 15px rgba(217,79,145,0.08);
-
-            transition: 0.3s;
+            font-size: 14px;
         }
 
-        .skill:hover {
-            background: #ffe5f1;
-
-            transform: scale(1.05);
-        }
-
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact-box {
-            max-width: 700px;
-
-            margin: auto;
-
+        /* Contact */
+        .contact {
             text-align: center;
-
-            background: linear-gradient(
-                135deg,
-                #fff,
-                #ffe9f3
-            );
-
-            padding: 50px;
-
-            border-radius: 30px;
-
-            border: 2px solid #f3b1d1;
-
-            box-shadow:
-                0 10px 35px rgba(217,79,145,0.12);
         }
 
-        .contact-box p {
-            margin: 20px 0 30px;
-
-            color: #705b68;
-
-            line-height: 1.7;
+        .contact p {
+            max-width: 550px;
+            margin: 0 auto 30px;
+            color: #666;
         }
 
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
 
-        /* =========================
-           FOOTER
-        ========================= */
+        .contact-links a {
+            color: #242424;
+            text-decoration: none;
+            border-bottom: 1px solid #242424;
+        }
 
+        /* Footer */
         footer {
             text-align: center;
-
             padding: 30px;
-
-            background: #fff;
-
-            border-top: 1px solid #f3bfd7;
-
-            color: #856c7b;
+            background-color: #eee9e3;
+            color: #777;
+            font-size: 13px;
         }
 
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 700px) {
+        /* Mobile */
+        @media (max-width: 800px) {
 
             nav {
-                padding: 0 5%;
+                padding: 15px 5%;
             }
 
-            .logo {
-                font-size: 19px;
-            }
-
-            .nav-links {
+            nav ul {
                 gap: 12px;
             }
 
-            .nav-links a {
-                font-size: 13px;
+            nav a {
+                font-size: 12px;
             }
 
             .hero {
-                padding-top: 120px;
+                flex-direction: column;
+                align-items: flex-start;
+                padding-top: 130px;
+            }
+
+            .hero-image {
+                width: 100%;
+                height: 350px;
+            }
+
+            .about-content,
+            .projects {
+                grid-template-columns: 1fr;
             }
 
             section {
-                padding: 80px 5%;
+                padding: 70px 6%;
             }
 
-            .about {
-                padding: 30px 20px;
-            }
-
-            .contact-box {
-                padding: 35px 20px;
+            .section-title {
+                font-size: 34px;
             }
         }
-
     </style>
 </head>
 
-
 <body>
 
-
-    <!-- =========================
-         NAVIGATION
-    ========================== -->
-
+    <!-- Navigation -->
     <nav>
+        <div class="logo">LINDSAY.</div>
 
-        <div class="logo">
-            LINDSAY ✦
-        </div>
-
-        <ul class="nav-links">
-
-            <li>
-                <a href="about.html">About Me</a>
-            </li>
-
-            <li>
-                <a href="work.html">Work</a>
-            </li>
-
-            <li>
-                <a href="skills.html">Skills</a>
-            </li>
-
-            <li>
-                <a href="contact.html">Contact</a>
-            </li>
-
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-
     </nav>
 
 
+    <!-- Hero Section -->
+    <header class="hero">
 
-    <!-- =========================
-         HERO
-    ========================== -->
+        <div class="hero-text">
 
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <div class="sparkle">
-                ✦ ✧ ✦
-            </div>
+            <p>Marketing • Creativity • Strategy</p>
 
             <h1>
-                Hi, I'm Lindsay!
+                Hi, I'm <span>Lindsay.</span>
             </h1>
 
-            <h2>
-                Marketing • Creativity • Strategy
-            </h2>
-
-            <p>
-                I'm a marketing student who loves turning ideas
-                into creative content, memorable experiences,
-                and strategic marketing campaigns.
+            <p class="hero-description">
+                I'm a marketing student at Iowa State University who enjoys
+                turning ideas into creative content, meaningful brand
+                experiences, and strategic marketing solutions.
             </p>
 
-            <div class="buttons">
+            <a href="#work" class="button">View My Work</a>
 
-                <a
-                    href="work.html"
-                    class="btn primary-btn"
-                >
-                    View My Work ✨
-                </a>
+            <a href="#contact" class="button button-outline">
+                Let's Connect
+            </a>
 
-                <a
-                    href="about.html"
-                    class="btn secondary-btn"
-                >
-                    Get to Know Me ♡
-                </a>
+        </div>
 
+
+        <!-- Replace this with your photo -->
+        <div class="hero-image">
+            <p>Your Photo Here</p>
+        </div>
+
+    </header>
+
+
+    <!-- About Section -->
+    <section class="about" id="about">
+
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about-content">
+
+            <div>
+                <p>
+                    I'm a marketing student at Iowa State University with an
+                    interest in creative marketing, social media, content
+                    creation, and brand strategy.
+                </p>
+
+                <p>
+                    I enjoy combining creativity with strategy to create
+                    marketing that feels authentic while still achieving
+                    measurable results.
+                </p>
+            </div>
+
+            <div>
+                <p>
+                    Outside of school and work, I enjoy beauty, nail art,
+                    video editing, design, and finding new ways to turn
+                    creative ideas into something people can connect with.
+                </p>
+
+                <p>
+                    I'm always looking for opportunities to learn, create,
+                    and grow as a marketer.
+                </p>
             </div>
 
         </div>
@@ -578,237 +393,140 @@
     </section>
 
 
+    <!-- Work Section -->
+    <section id="work">
 
-    <!-- =========================
-         ABOUT
-    ========================== -->
+        <h2 class="section-title">Featured Work</h2>
 
-    <section>
-
-        <h2 class="section-title">
-            A Little About Me ♡
-        </h2>
-
-        <p class="section-subtitle">
-            Creative thinker. Marketing lover. Always learning.
-        </p>
-
-        <div class="about">
-
-            <p>
-                I'm a marketing student at Iowa State University
-                with a passion for creative strategy, social media,
-                content creation, and building brands that people
-                actually want to interact with.
-            </p>
-
-            <br>
-
-            <p>
-                I enjoy combining creativity with strategy,
-                whether that's creating social content, developing
-                marketing ideas, analyzing results, or bringing
-                an event or campaign to life.
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         WORK
-    ========================== -->
-
-    <section>
-
-        <h2 class="section-title">
-            Featured Work ✨
-        </h2>
-
-        <p class="section-subtitle">
-            A few things I've created and worked on.
+        <p class="section-intro">
+            A selection of projects that showcase my experience with
+            content creation, social media, design, and marketing strategy.
         </p>
 
 
-        <div class="work-grid">
+        <div class="projects">
 
+            <div class="project">
 
-            <div class="work-card">
+                <div class="project-number">01 / SOCIAL MEDIA</div>
 
-                <div class="work-icon">
-                    📱
-                </div>
-
-                <h3>
-                    Social Media Marketing
-                </h3>
+                <h3>Instagram Campaign</h3>
 
                 <p>
-                    Creating engaging Instagram and TikTok
-                    content designed to increase reach,
-                    engagement, and brand awareness.
+                    Developed creative social media content designed to
+                    increase engagement, reach, and profile visits.
                 </p>
+
+                <a href="#">View Project →</a>
 
             </div>
 
 
+            <div class="project">
 
-            <div class="work-card">
+                <div class="project-number">02 / CONTENT</div>
 
-                <div class="work-icon">
-                    🎨
-                </div>
-
-                <h3>
-                    Content & Design
-                </h3>
+                <h3>TikTok Content</h3>
 
                 <p>
-                    Designing social media graphics, visual
-                    content, and branded experiences using
-                    tools such as Canva.
+                    Created short-form video content focused on increasing
+                    reach and connecting with new audiences.
                 </p>
+
+                <a href="#">View Project →</a>
 
             </div>
 
 
+            <div class="project">
 
-            <div class="work-card">
+                <div class="project-number">03 / DESIGN</div>
 
-                <div class="work-icon">
-                    📊
-                </div>
-
-                <h3>
-                    Marketing Analytics
-                </h3>
+                <h3>Brand & Visual Design</h3>
 
                 <p>
-                    Using data and marketing insights to
-                    understand audiences, evaluate performance,
-                    and make better marketing decisions.
+                    Created visual concepts and social media designs that
+                    communicate a brand's personality and identity.
                 </p>
+
+                <a href="#">View Project →</a>
 
             </div>
 
 
+            <div class="project">
 
-            <div class="work-card">
+                <div class="project-number">04 / STRATEGY</div>
 
-                <div class="work-icon">
-                    💡
-                </div>
-
-                <h3>
-                    Marketing Strategy
-                </h3>
+                <h3>Marketing Strategy</h3>
 
                 <p>
-                    Developing creative marketing strategies
-                    that connect brands with their target
-                    audiences.
+                    Applied marketing research and strategic thinking to
+                    develop recommendations for a real-world business
+                    challenge.
                 </p>
 
-            </div>
+                <a href="#">View Project →</a>
 
+            </div>
 
         </div>
 
     </section>
 
 
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
 
-    <!-- =========================
-         SKILLS
-    ========================== -->
+        <h2 class="section-title">What I Do</h2>
 
-    <section>
-
-        <h2 class="section-title">
-            My Skills ♡
-        </h2>
-
-        <p class="section-subtitle">
-            A mix of creative, analytical, and strategic skills.
+        <p class="section-intro">
+            A combination of creative, analytical, and strategic skills
+            that I bring to marketing projects.
         </p>
 
 
-        <div class="skills-container">
+        <div class="skill-list">
 
-            <span class="skill">
-                Social Media Marketing
-            </span>
-
-            <span class="skill">
-                Content Creation
-            </span>
-
-            <span class="skill">
-                Marketing Strategy
-            </span>
-
-            <span class="skill">
-                SEO
-            </span>
-
-            <span class="skill">
-                Market Research
-            </span>
-
-            <span class="skill">
-                Marketing Analytics
-            </span>
-
-            <span class="skill">
-                Canva
-            </span>
-
-            <span class="skill">
-                Video Editing
-            </span>
-
-            <span class="skill">
-                Graphic Design
-            </span>
-
-            <span class="skill">
-                Event Planning
-            </span>
-
-            <span class="skill">
-                Leadership
-            </span>
+            <div class="skill">Social Media Marketing</div>
+            <div class="skill">Content Creation</div>
+            <div class="skill">Marketing Strategy</div>
+            <div class="skill">SEO</div>
+            <div class="skill">Market Research</div>
+            <div class="skill">Marketing Analytics</div>
+            <div class="skill">Canva</div>
+            <div class="skill">Video Editing</div>
+            <div class="skill">Graphic Design</div>
+            <div class="skill">Event Planning</div>
+            <div class="skill">Leadership</div>
 
         </div>
 
     </section>
 
 
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
 
-    <!-- =========================
-         CONTACT
-    ========================== -->
+        <h2 class="section-title">Let's Connect</h2>
 
-    <section>
+        <p>
+            I'm always open to connecting with other marketers, creatives,
+            and potential employers. Feel free to reach out!
+        </p>
 
-        <div class="contact-box">
+        <div class="contact-links">
 
-            <h2 class="section-title">
-                Let's Connect ✨
-            </h2>
+            <a href="mailto:YOUR-EMAIL@example.com">
+                Email
+            </a>
 
-            <p>
-                Interested in working together, talking marketing,
-                or just saying hi? I'd love to hear from you!
-            </p>
+            <a href="https://www.linkedin.com/" target="_blank">
+                LinkedIn
+            </a>
 
-            <a
-                href="contact.html"
-                class="btn primary-btn"
-            >
-                Contact Me ♡
+            <a href="https://github.com/" target="_blank">
+                GitHub
             </a>
 
         </div>
@@ -816,23 +534,11 @@
     </section>
 
 
-
-    <!-- =========================
-         FOOTER
-    ========================== -->
-
+    <!-- Footer -->
     <footer>
-
-        <p>
-            ✦ Made with creativity & a little sparkle ✦
-        </p>
-
-        <p>
-            © 2026 Lindsay
-        </p>
-
+        © 2026 Lindsay. All rights reserved.
     </footer>
-
 
 </body>
 </html>
+```
