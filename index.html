@@ -1,7 +1,5 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +7,10 @@
     <title>Lindsay | Marketing Portfolio</title>
 
     <style>
+
+        /* =========================
+           GENERAL STYLING
+        ========================= */
 
         * {
             margin: 0;
@@ -19,55 +21,162 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #faf9f7;
-            color: #242424;
-            line-height: 1.6;
+            background: linear-gradient(
+                135deg,
+                #fff0f7,
+                #ffffff,
+                #ffe1ef,
+                #fff7fb
+            );
 
-            /* Space for fixed navigation */
-            padding-top: 75px;
+            color: #4a2940;
+            min-height: 100vh;
         }
 
 
         /* =========================
-           HERO
+           GLITTER BACKGROUND
         ========================= */
 
-        .hero {
-            min-height: calc(100vh - 75px);
-            padding: 80px 8%;
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background-image:
+                radial-gradient(#ffffff 1px, transparent 1px),
+                radial-gradient(#f7a8cc 1px, transparent 1px);
+
+            background-size: 35px 35px, 55px 55px;
+            background-position: 0 0, 20px 20px;
+
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 75px;
+
+            background: rgba(255, 255, 255, 0.90);
+            backdrop-filter: blur(10px);
+
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 60px;
+
+            padding: 0 8%;
+
+            border-bottom: 2px solid #f6b4d4;
+
+            box-shadow: 0 4px 20px rgba(222, 110, 160, 0.15);
+
+            z-index: 1000;
         }
 
-        .hero-text {
-            max-width: 650px;
+
+        /* Logo */
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+
+            color: #d94f91;
+
+            letter-spacing: 2px;
         }
 
-        .hero-text > p:first-child {
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 13px;
-            margin-bottom: 20px;
-            color: #8b6f5a;
+
+        /* Navigation links */
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+
+            color: #633d55;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d94f91;
+
+            text-shadow:
+                0 0 5px #f6a8ce,
+                0 0 10px #f6a8ce;
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 120px 20px 80px;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .sparkle {
+            font-size: 28px;
+            color: #e76ca8;
         }
 
         .hero h1 {
-            font-size: clamp(50px, 7vw, 90px);
-            line-height: 1;
-            margin-bottom: 25px;
+            font-size: clamp(45px, 7vw, 80px);
+
+            color: #d94f91;
+
+            margin: 15px 0;
+
+            text-shadow:
+                2px 2px 0 white,
+                4px 4px 12px rgba(217, 79, 145, 0.25);
         }
 
-        .hero h1 span {
-            color: #8b6f5a;
+        .hero h2 {
+            font-size: 26px;
+            color: #70465f;
+
+            margin-bottom: 20px;
         }
 
-        .hero-description {
+        .hero p {
             font-size: 18px;
-            max-width: 550px;
-            color: #666;
-            margin-bottom: 35px;
+            line-height: 1.7;
+
+            max-width: 650px;
+
+            margin: 0 auto 35px;
+
+            color: #6c5363;
         }
 
 
@@ -75,45 +184,54 @@
            BUTTONS
         ========================= */
 
-        .button {
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
             display: inline-block;
-            padding: 14px 25px;
-            background-color: #242424;
-            color: white;
+
+            padding: 14px 28px;
+
+            border-radius: 30px;
+
             text-decoration: none;
-            margin-right: 10px;
+
+            font-weight: bold;
+
             transition: 0.3s;
         }
 
-        .button:hover {
-            background-color: #8b6f5a;
-        }
+        .primary-btn {
+            background: linear-gradient(
+                135deg,
+                #e76ca8,
+                #d94f91
+            );
 
-        .button-outline {
-            background-color: transparent;
-            color: #242424;
-            border: 1px solid #242424;
-        }
-
-        .button-outline:hover {
-            background-color: #242424;
             color: white;
+
+            box-shadow:
+                0 6px 15px rgba(217, 79, 145, 0.25);
         }
 
+        .secondary-btn {
+            background: white;
 
-        /* =========================
-           HERO IMAGE
-        ========================= */
+            color: #d94f91;
 
-        .hero-image {
-            width: 350px;
-            height: 450px;
-            background-color: #e8e1da;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #777;
-            text-align: center;
+            border: 2px solid #e76ca8;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 8px 20px rgba(217, 79, 145, 0.3);
         }
 
 
@@ -126,13 +244,20 @@
         }
 
         .section-title {
-            font-size: 42px;
-            margin-bottom: 20px;
+            text-align: center;
+
+            font-size: 38px;
+
+            color: #d94f91;
+
+            margin-bottom: 15px;
         }
 
-        .section-intro {
-            max-width: 650px;
-            color: #666;
+        .section-subtitle {
+            text-align: center;
+
+            color: #806275;
+
             margin-bottom: 50px;
         }
 
@@ -142,64 +267,88 @@
         ========================= */
 
         .about {
-            background-color: #eee9e3;
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+
+            background: rgba(255,255,255,0.8);
+
+            padding: 45px;
+
+            border-radius: 25px;
+
+            border: 1px solid #f5bfd9;
+
+            box-shadow:
+                0 10px 30px rgba(217,79,145,0.1);
         }
 
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-        }
+        .about p {
+            line-height: 1.8;
 
-        .about-content p {
-            color: #555;
-            margin-bottom: 20px;
+            color: #674f60;
+
+            font-size: 17px;
         }
 
 
         /* =========================
-           PROJECTS
+           WORK
         ========================= */
 
-        .projects {
+        .work-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 25px;
+
+            max-width: 1100px;
+
+            margin: auto;
         }
 
-        .project {
-            border: 1px solid #ddd;
-            background-color: white;
-            padding: 35px;
+        .work-card {
+            background: white;
+
+            border-radius: 22px;
+
+            padding: 30px;
+
+            border: 1px solid #f5bfd9;
+
+            box-shadow:
+                0 8px 25px rgba(217,79,145,0.1);
+
             transition: 0.3s;
         }
 
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        .work-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 35px rgba(217,79,145,0.18);
         }
 
-        .project-number {
-            font-size: 13px;
-            color: #8b6f5a;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
+        .work-icon {
+            font-size: 35px;
 
-        .project h3 {
-            font-size: 25px;
             margin-bottom: 15px;
         }
 
-        .project p {
-            color: #666;
-            margin-bottom: 20px;
+        .work-card h3 {
+            color: #d94f91;
+
+            margin-bottom: 12px;
         }
 
-        .project a {
-            color: #242424;
-            font-weight: bold;
-            text-decoration: none;
+        .work-card p {
+            color: #705b68;
+
+            line-height: 1.6;
         }
 
 
@@ -207,25 +356,43 @@
            SKILLS
         ========================= */
 
-        .skills {
-            background-color: #242424;
-            color: white;
-        }
+        .skills-container {
+            max-width: 900px;
 
-        .skills .section-intro {
-            color: #bbb;
-        }
+            margin: auto;
 
-        .skill-list {
             display: flex;
+
+            justify-content: center;
+
             flex-wrap: wrap;
+
             gap: 15px;
         }
 
         .skill {
-            border: 1px solid #777;
+            background: white;
+
+            color: #d94f91;
+
             padding: 12px 20px;
-            font-size: 14px;
+
+            border-radius: 30px;
+
+            border: 1px solid #f2afd0;
+
+            font-weight: 600;
+
+            box-shadow:
+                0 5px 15px rgba(217,79,145,0.08);
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #ffe5f1;
+
+            transform: scale(1.05);
         }
 
 
@@ -233,27 +400,35 @@
            CONTACT
         ========================= */
 
-        .contact {
+        .contact-box {
+            max-width: 700px;
+
+            margin: auto;
+
             text-align: center;
+
+            background: linear-gradient(
+                135deg,
+                #fff,
+                #ffe9f3
+            );
+
+            padding: 50px;
+
+            border-radius: 30px;
+
+            border: 2px solid #f3b1d1;
+
+            box-shadow:
+                0 10px 35px rgba(217,79,145,0.12);
         }
 
-        .contact p {
-            max-width: 550px;
-            margin: 0 auto 30px;
-            color: #666;
-        }
+        .contact-box p {
+            margin: 20px 0 30px;
 
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-        }
+            color: #705b68;
 
-        .contact-links a {
-            color: #242424;
-            text-decoration: none;
-            border-bottom: 1px solid #242424;
+            line-height: 1.7;
         }
 
 
@@ -263,10 +438,14 @@
 
         footer {
             text-align: center;
+
             padding: 30px;
-            background-color: #eee9e3;
-            color: #777;
-            font-size: 13px;
+
+            background: #fff;
+
+            border-top: 1px solid #f3bfd7;
+
+            color: #856c7b;
         }
 
 
@@ -274,36 +453,42 @@
            MOBILE
         ========================= */
 
-        @media (max-width: 800px) {
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 0 5%;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
 
             .hero {
-                flex-direction: column;
-                align-items: flex-start;
-                padding-top: 60px;
-            }
-
-            .hero-image {
-                width: 100%;
-                height: 350px;
-            }
-
-            .about-content,
-            .projects {
-                grid-template-columns: 1fr;
+                padding-top: 120px;
             }
 
             section {
-                padding: 70px 6%;
+                padding: 80px 5%;
             }
 
-            .section-title {
-                font-size: 34px;
+            .about {
+                padding: 30px 20px;
             }
 
+            .contact-box {
+                padding: 35px 20px;
+            }
         }
 
     </style>
-
 </head>
 
 
@@ -311,61 +496,343 @@
 
 
     <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+
+        <div class="logo">
+            LINDSAY ✦
+        </div>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="about.html">About Me</a>
+            </li>
+
+            <li>
+                <a href="work.html">Work</a>
+            </li>
+
+            <li>
+                <a href="skills.html">Skills</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- =========================
          HERO
-    ========================= -->
+    ========================== -->
 
-    <header class="hero">
+    <section class="hero">
 
-        <div class="hero-text">
+        <div class="hero-content">
 
-            <p>Marketing • Creativity • Strategy</p>
+            <div class="sparkle">
+                ✦ ✧ ✦
+            </div>
 
             <h1>
-                Hi, I'm <span>Lindsay.</span>
+                Hi, I'm Lindsay!
             </h1>
 
-            <p class="hero-description">
-                I'm a marketing student at Iowa State University who enjoys
-                turning ideas into creative content, meaningful brand
-                experiences, and strategic marketing solutions.
+            <h2>
+                Marketing • Creativity • Strategy
+            </h2>
+
+            <p>
+                I'm a marketing student who loves turning ideas
+                into creative content, memorable experiences,
+                and strategic marketing campaigns.
             </p>
 
-            <a href="work.html" class="button">
-                View My Work
-            </a>
+            <div class="buttons">
 
-            <a href="contact.html" class="button button-outline">
-                Let's Connect
+                <a
+                    href="work.html"
+                    class="btn primary-btn"
+                >
+                    View My Work ✨
+                </a>
+
+                <a
+                    href="about.html"
+                    class="btn secondary-btn"
+                >
+                    Get to Know Me ♡
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section>
+
+        <h2 class="section-title">
+            A Little About Me ♡
+        </h2>
+
+        <p class="section-subtitle">
+            Creative thinker. Marketing lover. Always learning.
+        </p>
+
+        <div class="about">
+
+            <p>
+                I'm a marketing student at Iowa State University
+                with a passion for creative strategy, social media,
+                content creation, and building brands that people
+                actually want to interact with.
+            </p>
+
+            <br>
+
+            <p>
+                I enjoy combining creativity with strategy,
+                whether that's creating social content, developing
+                marketing ideas, analyzing results, or bringing
+                an event or campaign to life.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         WORK
+    ========================== -->
+
+    <section>
+
+        <h2 class="section-title">
+            Featured Work ✨
+        </h2>
+
+        <p class="section-subtitle">
+            A few things I've created and worked on.
+        </p>
+
+
+        <div class="work-grid">
+
+
+            <div class="work-card">
+
+                <div class="work-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Social Media Marketing
+                </h3>
+
+                <p>
+                    Creating engaging Instagram and TikTok
+                    content designed to increase reach,
+                    engagement, and brand awareness.
+                </p>
+
+            </div>
+
+
+
+            <div class="work-card">
+
+                <div class="work-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Content & Design
+                </h3>
+
+                <p>
+                    Designing social media graphics, visual
+                    content, and branded experiences using
+                    tools such as Canva.
+                </p>
+
+            </div>
+
+
+
+            <div class="work-card">
+
+                <div class="work-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Marketing Analytics
+                </h3>
+
+                <p>
+                    Using data and marketing insights to
+                    understand audiences, evaluate performance,
+                    and make better marketing decisions.
+                </p>
+
+            </div>
+
+
+
+            <div class="work-card">
+
+                <div class="work-icon">
+                    💡
+                </div>
+
+                <h3>
+                    Marketing Strategy
+                </h3>
+
+                <p>
+                    Developing creative marketing strategies
+                    that connect brands with their target
+                    audiences.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section>
+
+        <h2 class="section-title">
+            My Skills ♡
+        </h2>
+
+        <p class="section-subtitle">
+            A mix of creative, analytical, and strategic skills.
+        </p>
+
+
+        <div class="skills-container">
+
+            <span class="skill">
+                Social Media Marketing
+            </span>
+
+            <span class="skill">
+                Content Creation
+            </span>
+
+            <span class="skill">
+                Marketing Strategy
+            </span>
+
+            <span class="skill">
+                SEO
+            </span>
+
+            <span class="skill">
+                Market Research
+            </span>
+
+            <span class="skill">
+                Marketing Analytics
+            </span>
+
+            <span class="skill">
+                Canva
+            </span>
+
+            <span class="skill">
+                Video Editing
+            </span>
+
+            <span class="skill">
+                Graphic Design
+            </span>
+
+            <span class="skill">
+                Event Planning
+            </span>
+
+            <span class="skill">
+                Leadership
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section>
+
+        <div class="contact-box">
+
+            <h2 class="section-title">
+                Let's Connect ✨
+            </h2>
+
+            <p>
+                Interested in working together, talking marketing,
+                or just saying hi? I'd love to hear from you!
+            </p>
+
+            <a
+                href="contact.html"
+                class="btn primary-btn"
+            >
+                Contact Me ♡
             </a>
 
         </div>
 
+    </section>
 
-        <div class="hero-image">
-            <p>Your Photo Here</p>
-        </div>
-
-    </header>
 
 
     <!-- =========================
          FOOTER
-    ========================= -->
+    ========================== -->
 
     <footer>
 
-        © 2026 Lindsay. All rights reserved.
+        <p>
+            ✦ Made with creativity & a little sparkle ✦
+        </p>
+
+        <p>
+            © 2026 Lindsay
+        </p>
 
     </footer>
 
 
-    <!-- =========================
-         NAVIGATION JAVASCRIPT
-    ========================= -->
-
-    <script src="navigation.js"></script>
-
 </body>
-
 </html>
-```
