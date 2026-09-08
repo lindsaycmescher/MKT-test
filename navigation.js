@@ -22,6 +22,10 @@ const navigation = [
 ];
 
 
+/* -----------------------------------------
+   CREATE NAVIGATION
+   ----------------------------------------- */
+
 function createNavigation() {
 
     const navContainer = document.getElementById("site-nav");
@@ -49,6 +53,8 @@ function createNavigation() {
         link.href = item.url;
         link.textContent = item.name;
 
+        /* Automatically highlight current page */
+
         if (currentPage === item.url) {
             link.classList.add("active");
             link.setAttribute("aria-current", "page");
@@ -64,85 +70,8 @@ function createNavigation() {
 }
 
 
+/* -----------------------------------------
+   INITIALIZE
+   ----------------------------------------- */
 
-/* =========================================
-   PINK SPARKLE CURSOR
-   ========================================= */
-
-const sparkleSymbols = [
-    "✦",
-    "✧",
-    "⋆",
-    "✶",
-    "✷",
-    "♡"
-];
-
-let lastSparkleTime = 0;
-
-
-document.addEventListener("mousemove", function(event) {
-
-    const now = Date.now();
-
-    if (now - lastSparkleTime < 45) {
-        return;
-    }
-
-    lastSparkleTime = now;
-
-    createSparkle(event.clientX, event.clientY);
-});
-
-
-function createSparkle(x, y) {
-
-    const sparkle = document.createElement("span");
-
-    sparkle.className = "cursor-sparkle";
-
-    sparkle.textContent =
-        sparkleSymbols[
-            Math.floor(Math.random() * sparkleSymbols.length)
-        ];
-
-    sparkle.style.left = `${x}px`;
-    sparkle.style.top = `${y}px`;
-
-    const randomX =
-        Math.floor(Math.random() * 80) - 40;
-
-    const randomY =
-        Math.floor(Math.random() * 80) - 40;
-
-    sparkle.style.setProperty(
-        "--sparkle-x",
-        `${randomX}px`
-    );
-
-    sparkle.style.setProperty(
-        "--sparkle-y",
-        `${randomY}px`
-    );
-
-    sparkle.style.fontSize =
-        `${Math.random() * 10 + 8}px`;
-
-    document.body.appendChild(sparkle);
-
-    setTimeout(() => {
-        sparkle.remove();
-    }, 800);
-}
-
-
-
-/* =========================================
-   START WEBSITE
-   ========================================= */
-
-document.addEventListener("DOMContentLoaded", function() {
-
-    createNavigation();
-
-});
+document.addEventListener("DOMContentLoaded", createNavigation);
