@@ -75,3 +75,90 @@ function createNavigation() {
    ----------------------------------------- */
 
 document.addEventListener("DOMContentLoaded", createNavigation);
+/* =========================================
+   GLITTER CURSOR EFFECT ✨
+   ========================================= */
+
+const glitterSymbols = ["✦", "✧", "⋆", "✶", "✷", "❋"];
+
+let lastGlitter = 0;
+
+document.addEventListener("mousemove", function(event) {
+
+    const now = Date.now();
+
+    // Controls how often glitter appears
+    if (now - lastGlitter < 50) {
+        return;
+    }
+
+    lastGlitter = now;
+
+    createGlitter(
+        event.clientX,
+        event.clientY
+    );
+
+});
+
+
+function createGlitter(x, y) {
+
+    const glitter =
+        document.createElement("span");
+
+    glitter.className = "cursor-glitter";
+
+    // Pick a random sparkle
+    glitter.textContent =
+        glitterSymbols[
+            Math.floor(
+                Math.random() *
+                glitterSymbols.length
+            )
+        ];
+
+
+    // Put glitter where the cursor is
+    glitter.style.left = `${x}px`;
+    glitter.style.top = `${y}px`;
+
+
+    // Random movement after appearing
+    const moveX =
+        Math.random() * 60 - 30;
+
+    const moveY =
+        Math.random() * 60 - 30;
+
+
+    glitter.style.setProperty(
+        "--move-x",
+        `${moveX}px`
+    );
+
+    glitter.style.setProperty(
+        "--move-y",
+        `${moveY}px`
+    );
+
+
+    // Random size
+    const size =
+        Math.random() * 12 + 8;
+
+    glitter.style.fontSize =
+        `${size}px`;
+
+
+    document.body.appendChild(glitter);
+
+
+    // Remove glitter after animation
+    setTimeout(function() {
+
+        glitter.remove();
+
+    }, 900);
+
+}
