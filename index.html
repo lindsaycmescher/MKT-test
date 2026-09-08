@@ -1,819 +1,1469 @@
-/* =========================================
-   PINK SPARKLE WEBSITE
-   ========================================= */
-
-:root {
-    --pink-background: #fce7f3;
-    --pink-light: #fff7fb;
-    --pink-soft: #fbcfe8;
-    --pink: #f9a8d4;
-    --pink-medium: #ec4899;
-    --pink-dark: #be185d;
-    --text: #4a2940;
-    --white: #ffffff;
-    --border: #f3b5d1;
-    --shadow: 0 5px 20px rgba(190, 24, 93, 0.12);
-}
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
 
-/* =========================================
-   BASIC RESET
-   ========================================= */
-
-* {
-    box-sizing: border-box;
-}
+    <meta charset="UTF-8">
 
-html {
-    scroll-behavior: smooth;
-}
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-body {
-    margin: 0;
-    min-height: 100vh;
+    <title>My Pink Website</title>
 
-    font-family: "Trebuchet MS", Arial, sans-serif;
 
-    color: var(--text);
+    <!-- =====================================
+         ALL CSS IS INSIDE THIS HTML FILE
+         ===================================== -->
 
-    /*
-       LIGHT PINK BACKGROUND
+    <style>
 
-       The central website takes 80%.
-       This leaves approximately 10%
-       on the left and right.
-    */
+        /* =====================================
+           COLORS
+           ===================================== */
 
-    background-color: var(--pink-background);
+        :root {
+            --pink-background: #fce7f3;
+            --pink-light: #fff7fb;
+            --pink-soft: #fbcfe8;
+            --pink: #f9a8d4;
+            --pink-medium: #ec4899;
+            --pink-dark: #be185d;
 
-    /*
-       Sparkle pattern
-    */
+            --text: #4a2940;
 
-    background-image:
-        radial-gradient(
-            circle,
-            rgba(255, 255, 255, 0.9) 0 2px,
-            transparent 2.5px
-        ),
-        radial-gradient(
-            circle,
-            rgba(255, 255, 255, 0.75) 0 1.5px,
-            transparent 2px
-        ),
-        radial-gradient(
-            circle,
-            rgba(255, 255, 255, 0.8) 0 1px,
-            transparent 2px
-        );
+            --white: #ffffff;
 
-    background-size:
-        100px 100px,
-        150px 150px,
-        75px 75px;
+            --border: #f3b5d1;
 
-    background-position:
-        0 0,
-        30px 40px,
-        70px 20px;
+            --shadow:
+                0 5px 20px rgba(190, 24, 93, 0.12);
+        }
 
-    overflow-x: hidden;
-}
 
+        /* =====================================
+           BASIC RESET
+           ===================================== */
 
-/* =========================================
-   MAIN WEBSITE
-   ========================================= */
+        * {
+            box-sizing: border-box;
+        }
 
-.site-wrapper {
 
-    /*
-       80% of the screen
+        html {
+            scroll-behavior: smooth;
+        }
 
-       This leaves 10% on each side.
-    */
 
-    width: 80vw;
-    min-height: 100vh;
+        body {
 
-    margin: 0 auto;
+            margin: 0;
 
-    background: rgba(255, 247, 251, 0.97);
+            min-height: 100vh;
 
-    border-left: 2px solid var(--border);
-    border-right: 2px solid var(--border);
+            font-family:
+                "Trebuchet MS",
+                Arial,
+                sans-serif;
 
-    box-shadow:
-        0 0 30px rgba(190, 24, 93, 0.12),
-        0 0 70px rgba(236, 72, 153, 0.08);
-}
+            color: var(--text);
 
+            /*
+               LIGHT PINK OUTER BACKGROUND
+            */
 
-/* =========================================
-   HEADER
-   ========================================= */
+            background-color:
+                var(--pink-background);
 
-.site-header {
 
-    /*
-       Logo = 20%
-       Header content = 80%
-    */
+            /*
+               SPARKLE PATTERN
+            */
 
-    display: grid;
-    grid-template-columns: 20% 80%;
+            background-image:
 
-    min-height: 140px;
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,0.9) 0 2px,
+                    transparent 2.5px
+                ),
 
-    border-bottom: 2px solid var(--border);
-}
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,0.75) 0 1.5px,
+                    transparent 2px
+                ),
 
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,0.8) 0 1px,
+                    transparent 2px
+                );
 
-/* =========================================
-   LOGO
-   ========================================= */
 
-.logo-area {
+            background-size:
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+                100px 100px,
+                150px 150px,
+                75px 75px;
 
-    padding: 20px;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--pink-soft),
-            var(--pink-light)
-        );
+            background-position:
 
-    border-right: 2px solid var(--border);
-}
+                0 0,
+                30px 40px,
+                70px 20px;
 
-.logo {
 
-    color: var(--pink-dark);
+            overflow-x: hidden;
+        }
 
-    text-decoration: none;
 
-    font-size: clamp(1.5rem, 3vw, 2.4rem);
-    font-weight: bold;
+        /* =====================================
+           MAIN WEBSITE
 
-    text-align: center;
+           80% width
+           10% pink space on each side
+           ===================================== */
 
-    text-shadow:
-        0 2px 10px rgba(190, 24, 93, 0.15);
-}
+        .site-wrapper {
 
-.logo::after {
-    content: " ✦";
-    color: var(--pink-medium);
-}
+            width: 80vw;
 
+            min-height: 100vh;
 
-/* =========================================
-   HEADER RIGHT SIDE
-   ========================================= */
+            margin: 0 auto;
 
-.header-main {
-    display: flex;
-    flex-direction: column;
-}
+            background:
+                rgba(255,247,251,0.97);
 
 
-/* Website description */
+            border-left:
+                2px solid var(--border);
 
-.header-description {
+            border-right:
+                2px solid var(--border);
 
-    flex: 1;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+            box-shadow:
 
-    padding: 15px 30px;
+                0 0 30px
+                rgba(190,24,93,0.12),
 
-    text-align: center;
+                0 0 70px
+                rgba(236,72,153,0.08);
+        }
 
-    background: var(--pink-light);
-}
 
-.header-description p {
+        /* =====================================
+           HEADER
+           ===================================== */
 
-    max-width: 700px;
+        .site-header {
 
-    margin: 0;
+            display: grid;
 
-    line-height: 1.5;
+            grid-template-columns:
+                20% 80%;
 
-    font-size: 0.9rem;
-}
+            min-height: 140px;
 
+            border-bottom:
+                2px solid var(--border);
+        }
 
-/* =========================================
-   NAVIGATION
-   ========================================= */
 
-.primary-nav {
+        /* =====================================
+           LOGO
+           ===================================== */
 
-    min-height: 40px;
+        .logo-area {
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+            display: flex;
 
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+            align-items: center;
 
-    background: #fffafd;
-}
+            justify-content: center;
 
+            padding: 20px;
 
-/* JavaScript creates this list */
 
-.nav-list {
+            background:
 
-    display: flex;
+                linear-gradient(
+                    135deg,
+                    var(--pink-soft),
+                    var(--pink-light)
+                );
 
-    justify-content: center;
-    align-items: center;
 
-    flex-wrap: wrap;
+            border-right:
+                2px solid var(--border);
+        }
 
-    gap: 4px;
 
-    list-style: none;
+        .logo {
 
-    padding: 0;
-    margin: 0;
-}
+            color: var(--pink-dark);
 
-.nav-list li {
-    margin: 0;
-}
+            text-decoration: none;
 
-.nav-list a {
+            font-size:
+                clamp(1.5rem, 3vw, 2.4rem);
 
-    display: block;
+            font-weight: bold;
 
-    padding: 7px 18px;
+            text-align: center;
 
-    color: var(--pink-dark);
 
-    text-decoration: none;
+            text-shadow:
+                0 2px 10px
+                rgba(190,24,93,0.15);
+        }
 
-    font-size: 0.85rem;
-    font-weight: bold;
 
-    border-radius: 20px;
+        .logo::after {
 
-    transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
-}
+            content: " ✦";
 
-.nav-list a:hover {
+            color:
+                var(--pink-medium);
+        }
 
-    color: white;
 
-    background: var(--pink-medium);
+        /* =====================================
+           HEADER MAIN AREA
+           ===================================== */
 
-    transform: translateY(-2px);
-}
+        .header-main {
 
-.nav-list a.active {
+            display: flex;
 
-    color: white;
+            flex-direction: column;
+        }
 
-    background: var(--pink-dark);
 
-    box-shadow:
-        0 3px 10px rgba(190, 24, 93, 0.2);
-}
+        /* =====================================
+           WEBSITE DESCRIPTION
+           ===================================== */
 
+        .header-description {
 
-/* =========================================
-   SECONDARY NAVIGATION
-   ========================================= */
+            flex: 1;
 
-.secondary-nav {
+            display: flex;
 
-    min-height: 30px;
+            align-items: center;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+            justify-content: center;
 
-    background: #fff7fb;
+            padding:
+                15px 30px;
 
-    font-size: 0.75rem;
-}
+            text-align: center;
 
-.secondary-nav a {
+            background:
+                var(--pink-light);
+        }
 
-    margin: 0 10px;
 
-    color: var(--pink-medium);
+        .header-description p {
 
-    text-decoration: none;
-}
+            max-width: 700px;
 
-.secondary-nav a:hover {
+            margin: 0;
 
-    color: var(--pink-dark);
+            line-height: 1.5;
 
-    text-decoration: underline;
-}
+            font-size: 0.9rem;
+        }
 
 
-/* =========================================
-   MAIN THREE-COLUMN AREA
-   ========================================= */
+        /* =====================================
+           PRIMARY NAVIGATION
+           ===================================== */
 
-.content-grid {
+        .primary-nav {
 
-    display: grid;
+            min-height: 40px;
 
-    /*
-       Left sidebar
-       Main content
-       Right sidebar
-    */
+            display: flex;
 
-    grid-template-columns:
-        18%
-        64%
-        18%;
+            justify-content: center;
 
-    min-height: 600px;
-}
+            align-items: center;
 
+            border-top:
+                1px solid var(--border);
 
-/* =========================================
-   LEFT SIDEBAR
-   ========================================= */
+            border-bottom:
+                1px solid var(--border);
 
-.left-sidebar {
+            background:
+                #fffafd;
+        }
 
-    padding: 25px 15px;
 
-    background:
-        linear-gradient(
-            180deg,
-            #fce7f3,
-            #fff7fb
-        );
+        .nav-list {
 
-    border-right: 2px solid var(--border);
-}
+            display: flex;
 
-.sidebar-title {
+            justify-content: center;
 
-    margin-bottom: 18px;
+            align-items: center;
 
-    color: var(--pink-dark);
+            flex-wrap: wrap;
 
-    font-size: 0.8rem;
-    font-weight: bold;
+            gap: 4px;
 
-    text-transform: uppercase;
+            list-style: none;
 
-    letter-spacing: 1px;
-}
+            padding: 0;
 
+            margin: 0;
+        }
 
-/* Sidebar navigation */
 
-.sidebar-links {
+        .nav-list li {
 
-    list-style: none;
+            margin: 0;
+        }
 
-    padding: 0;
-    margin: 0;
-}
 
-.sidebar-links li {
+        .nav-list a {
 
-    margin-bottom: 8px;
-}
+            display: block;
 
-.sidebar-links a {
+            padding:
+                7px 18px;
 
-    display: block;
+            color:
+                var(--pink-dark);
 
-    padding: 8px 10px;
+            text-decoration: none;
 
-    color: var(--text);
+            font-size: 0.85rem;
 
-    text-decoration: none;
+            font-weight: bold;
 
-    border-radius: 8px;
+            border-radius: 20px;
 
-    transition: 0.2s ease;
-}
+            transition:
+                background 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease;
+        }
 
-.sidebar-links a:hover {
 
-    color: var(--pink-dark);
+        .nav-list a:hover {
 
-    background: var(--pink-soft);
+            color: white;
 
-    transform: translateX(4px);
-}
+            background:
+                var(--pink-medium);
 
+            transform:
+                translateY(-2px);
+        }
 
-/* =========================================
-   MAIN CONTENT
-   ========================================= */
 
-.main-content {
+        .nav-list a.active {
 
-    padding: 25px 30px;
+            color: white;
 
-    background:
-        rgba(255, 255, 255, 0.7);
-}
+            background:
+                var(--pink-dark);
 
+            box-shadow:
+                0 3px 10px
+                rgba(190,24,93,0.2);
+        }
 
-/* =========================================
-   HERO IMAGE
-   ========================================= */
 
-.hero {
+        /* =====================================
+           SECONDARY NAVIGATION
+           ===================================== */
 
-    position: relative;
+        .secondary-nav {
 
-    min-height: 220px;
+            min-height: 30px;
 
-    display: flex;
+            display: flex;
 
-    align-items: center;
-    justify-content: center;
+            justify-content: center;
 
-    margin-bottom: 25px;
+            align-items: center;
 
-    overflow: hidden;
+            background:
+                #fff7fb;
 
-    border: 2px solid var(--border);
+            font-size: 0.75rem;
+        }
 
-    border-radius: 15px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #fbcfe8,
-            #fff7fb,
-            #fce7f3
-        );
+        .secondary-nav a {
 
-    box-shadow: var(--shadow);
-}
+            margin:
+                0 10px;
 
+            color:
+                var(--pink-medium);
 
-/* Decorative sparkles */
+            text-decoration: none;
+        }
 
-.hero::before {
 
-    content:
-        "✦     ✧     ✦     ✧";
+        .secondary-nav a:hover {
 
-    position: absolute;
+            color:
+                var(--pink-dark);
 
-    top: 15px;
-    right: 20px;
+            text-decoration: underline;
+        }
 
-    color: rgba(190, 24, 93, 0.25);
 
-    font-size: 1.2rem;
+        /* =====================================
+           THREE COLUMN CONTENT AREA
+           ===================================== */
 
-    letter-spacing: 5px;
-}
+        .content-grid {
 
-.hero::after {
+            display: grid;
 
-    content:
-        "✧     ✦     ✧";
+            grid-template-columns:
 
-    position: absolute;
+                18%
+                64%
+                18%;
 
-    bottom: 15px;
-    left: 20px;
+            min-height: 600px;
+        }
 
-    color: rgba(236, 72, 153, 0.25);
 
-    font-size: 1rem;
-}
+        /* =====================================
+           LEFT SIDEBAR
+           ===================================== */
 
+        .left-sidebar {
 
-/* Actual hero content */
+            padding:
+                25px 15px;
 
-.hero-content {
+            background:
 
-    position: relative;
+                linear-gradient(
+                    180deg,
+                    #fce7f3,
+                    #fff7fb
+                );
 
-    z-index: 1;
+            border-right:
+                2px solid var(--border);
+        }
 
-    text-align: center;
-}
 
-.hero h1 {
+        .sidebar-title {
 
-    margin: 0 0 10px;
+            margin-bottom:
+                18px;
 
-    color: var(--pink-dark);
+            color:
+                var(--pink-dark);
 
-    font-size: clamp(2rem, 4vw, 3rem);
-}
+            font-size:
+                0.8rem;
 
-.hero p {
+            font-weight:
+                bold;
 
-    margin: 0;
+            text-transform:
+                uppercase;
 
-    font-size: 0.95rem;
-}
+            letter-spacing:
+                1px;
+        }
 
 
-/* =========================================
-   MAIN TEXT
-   ========================================= */
+        .sidebar-links {
 
-.content-title {
+            list-style:
+                none;
 
-    margin-top: 0;
+            padding:
+                0;
 
-    color: var(--pink-dark);
+            margin:
+                0;
+        }
 
-    font-size: 1.7rem;
-}
 
-.main-content p {
+        .sidebar-links li {
 
-    line-height: 1.7;
-}
+            margin-bottom:
+                8px;
+        }
 
-.keyword {
 
-    color: var(--pink-dark);
+        .sidebar-links a {
 
-    font-weight: bold;
-}
+            display:
+                block;
 
+            padding:
+                8px 10px;
 
-/* =========================================
-   CARDS
-   ========================================= */
+            color:
+                var(--text);
 
-.card-grid {
+            text-decoration:
+                none;
 
-    display: grid;
+            border-radius:
+                8px;
 
-    grid-template-columns:
-        repeat(auto-fit, minmax(180px, 1fr));
+            transition:
+                0.2s ease;
+        }
 
-    gap: 15px;
 
-    margin-top: 25px;
-}
+        .sidebar-links a:hover {
 
-.card {
+            color:
+                var(--pink-dark);
 
-    padding: 18px;
+            background:
+                var(--pink-soft);
 
-    background: white;
+            transform:
+                translateX(4px);
+        }
 
-    border: 1px solid var(--border);
 
-    border-radius: 12px;
+        /* =====================================
+           MAIN CONTENT
+           ===================================== */
 
-    box-shadow: var(--shadow);
+        .main-content {
 
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
+            padding:
+                25px 30px;
 
-.card:hover {
+            background:
+                rgba(255,255,255,0.7);
+        }
 
-    transform: translateY(-4px);
 
-    box-shadow:
-        0 10px 25px rgba(190, 24, 93, 0.16);
-}
+        /* =====================================
+           HERO
+           ===================================== */
 
-.card h3 {
+        .hero {
 
-    margin-top: 0;
+            position:
+                relative;
 
-    color: var(--pink-dark);
-}
+            min-height:
+                220px;
 
+            display:
+                flex;
 
-/* =========================================
-   RIGHT SIDEBAR
-   ========================================= */
+            align-items:
+                center;
 
-.right-sidebar {
+            justify-content:
+                center;
 
-    padding: 25px 15px;
+            margin-bottom:
+                25px;
 
-    background:
-        linear-gradient(
-            180deg,
-            #fce7f3,
-            #fff7fb
-        );
+            overflow:
+                hidden;
 
-    border-left: 2px solid var(--border);
-}
+            border:
+                2px solid var(--border);
 
+            border-radius:
+                15px;
 
-/* Keeps content visible when scrolling */
 
-.sticky-content {
+            background:
 
-    position: sticky;
+                linear-gradient(
+                    135deg,
+                    #fbcfe8,
+                    #fff7fb,
+                    #fce7f3
+                );
 
-    top: 20px;
-}
 
-.sticky-content h3 {
+            box-shadow:
+                var(--shadow);
+        }
 
-    margin-top: 0;
 
-    color: var(--pink-dark);
-}
+        /* Decorative sparkles */
 
+        .hero::before {
 
-/* Sticky content boxes */
+            content:
+                "✦     ✧     ✦     ✧";
 
-.sticky-item {
+            position:
+                absolute;
 
-    display: block;
+            top:
+                15px;
 
-    margin-bottom: 10px;
+            right:
+                20px;
 
-    padding: 11px;
+            color:
+                rgba(190,24,93,0.25);
 
-    color: var(--text);
+            font-size:
+                1.2rem;
 
-    text-decoration: none;
+            letter-spacing:
+                5px;
+        }
 
-    background: white;
 
-    border: 1px solid var(--border);
+        .hero::after {
 
-    border-radius: 9px;
+            content:
+                "✧     ✦     ✧";
 
-    font-size: 0.85rem;
+            position:
+                absolute;
 
-    transition: 0.2s ease;
-}
+            bottom:
+                15px;
 
-.sticky-item:hover {
+            left:
+                20px;
 
-    color: var(--pink-dark);
+            color:
+                rgba(236,72,153,0.25);
 
-    background: #fff0f7;
+            font-size:
+                1rem;
+        }
 
-    transform: translateY(-2px);
-}
 
+        .hero-content {
 
-/* =========================================
-   PINK BUTTON
-   ========================================= */
+            position:
+                relative;
 
-.pink-button {
+            z-index:
+                1;
 
-    display: inline-block;
+            text-align:
+                center;
+        }
 
-    margin-top: 12px;
 
-    padding: 10px 20px;
+        .hero h1 {
 
-    color: white;
+            margin:
+                0 0 10px;
 
-    background: var(--pink-medium);
+            color:
+                var(--pink-dark);
 
-    border-radius: 25px;
+            font-size:
+                clamp(2rem,4vw,3rem);
+        }
 
-    text-decoration: none;
 
-    font-weight: bold;
+        .hero p {
 
-    box-shadow:
-        0 4px 12px rgba(236, 72, 153, 0.25);
+            margin:
+                0;
 
-    transition: 0.2s ease;
-}
+            font-size:
+                0.95rem;
+        }
 
-.pink-button:hover {
 
-    background: var(--pink-dark);
+        /* =====================================
+           MAIN CONTENT TEXT
+           ===================================== */
 
-    transform: translateY(-2px);
-}
+        .content-title {
 
+            margin-top:
+                0;
 
-/* =========================================
-   FOOTER
-   ========================================= */
+            color:
+                var(--pink-dark);
 
-.site-footer {
+            font-size:
+                1.7rem;
+        }
 
-    min-height: 65px;
 
-    display: flex;
+        .main-content p {
 
-    justify-content: center;
-    align-items: center;
+            line-height:
+                1.7;
+        }
 
-    padding: 15px 20px;
 
-    text-align: center;
+        .keyword {
 
-    background: var(--pink-soft);
+            color:
+                var(--pink-dark);
 
-    border-top: 2px solid var(--border);
+            font-weight:
+                bold;
+        }
 
-    color: var(--pink-dark);
 
-    font-size: 0.8rem;
-}
+        /* =====================================
+           CARDS
+           ===================================== */
 
-.site-footer a {
+        .card-grid {
 
-    color: var(--pink-dark);
-}
+            display:
+                grid;
 
+            grid-template-columns:
 
-/* =========================================
-   RESPONSIVE DESIGN
-   ========================================= */
+                repeat(
+                    auto-fit,
+                    minmax(180px,1fr)
+                );
 
-@media (max-width: 850px) {
+            gap:
+                15px;
 
-    /*
-       Give mobile devices more room.
-    */
+            margin-top:
+                25px;
+        }
 
-    .site-wrapper {
-        width: 92vw;
-    }
 
-    .site-header {
-        grid-template-columns: 1fr;
-    }
+        .card {
 
-    .logo-area {
+            padding:
+                18px;
 
-        min-height: 90px;
+            background:
+                white;
 
-        border-right: none;
+            border:
+                1px solid var(--border);
 
-        border-bottom: 2px solid var(--border);
-    }
+            border-radius:
+                12px;
 
-    .content-grid {
+            box-shadow:
+                var(--shadow);
 
-        grid-template-columns: 1fr;
-    }
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
 
-    .left-sidebar {
 
-        border-right: none;
+        .card:hover {
 
-        border-bottom: 2px solid var(--border);
-    }
+            transform:
+                translateY(-4px);
 
-    .right-sidebar {
+            box-shadow:
+                0 10px 25px
+                rgba(190,24,93,0.16);
+        }
 
-        display: none;
-    }
 
-    .main-content {
+        .card h3 {
 
-        padding: 20px;
-    }
+            margin-top:
+                0;
 
-    .sidebar-links {
+            color:
+                var(--pink-dark);
+        }
 
-        display: flex;
 
-        flex-wrap: wrap;
+        /* =====================================
+           RIGHT SIDEBAR
+           ===================================== */
 
-        gap: 5px;
-    }
+        .right-sidebar {
 
-    .sidebar-links li {
+            padding:
+                25px 15px;
 
-        margin-bottom: 0;
-    }
+            background:
 
-    .nav-list a {
+                linear-gradient(
+                    180deg,
+                    #fce7f3,
+                    #fff7fb
+                );
 
-        padding: 7px 11px;
-    }
-}
+            border-left:
+                2px solid var(--border);
+        }
+
+
+        /* Sticky content */
+
+        .sticky-content {
+
+            position:
+                sticky;
+
+            top:
+                20px;
+        }
+
+
+        .sticky-content h3 {
+
+            margin-top:
+                0;
+
+            color:
+                var(--pink-dark);
+        }
+
+
+        .sticky-item {
+
+            display:
+                block;
+
+            margin-bottom:
+                10px;
+
+            padding:
+                11px;
+
+            color:
+                var(--text);
+
+            text-decoration:
+                none;
+
+            background:
+                white;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                9px;
+
+            font-size:
+                0.85rem;
+
+            transition:
+                0.2s ease;
+        }
+
+
+        .sticky-item:hover {
+
+            color:
+                var(--pink-dark);
+
+            background:
+                #fff0f7;
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =====================================
+           PINK BUTTON
+           ===================================== */
+
+        .pink-button {
+
+            display:
+                inline-block;
+
+            margin-top:
+                12px;
+
+            padding:
+                10px 20px;
+
+            color:
+                white;
+
+            background:
+                var(--pink-medium);
+
+            border-radius:
+                25px;
+
+            text-decoration:
+                none;
+
+            font-weight:
+                bold;
+
+            box-shadow:
+                0 4px 12px
+                rgba(236,72,153,0.25);
+
+            transition:
+                0.2s ease;
+        }
+
+
+        .pink-button:hover {
+
+            background:
+                var(--pink-dark);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =====================================
+           FOOTER
+           ===================================== */
+
+        .site-footer {
+
+            min-height:
+                65px;
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            padding:
+                15px 20px;
+
+            text-align:
+                center;
+
+            background:
+                var(--pink-soft);
+
+            border-top:
+                2px solid var(--border);
+
+            color:
+                var(--pink-dark);
+
+            font-size:
+                0.8rem;
+        }
+
+
+        .site-footer a {
+
+            color:
+                var(--pink-dark);
+        }
+
+
+        /* =====================================
+           MOBILE
+           ===================================== */
+
+        @media (max-width: 850px) {
+
+            .site-wrapper {
+
+                width:
+                    92vw;
+            }
+
+
+            .site-header {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .logo-area {
+
+                min-height:
+                    90px;
+
+                border-right:
+                    none;
+
+                border-bottom:
+                    2px solid var(--border);
+            }
+
+
+            .content-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .left-sidebar {
+
+                border-right:
+                    none;
+
+                border-bottom:
+                    2px solid var(--border);
+            }
+
+
+            .right-sidebar {
+
+                display:
+                    none;
+            }
+
+
+            .main-content {
+
+                padding:
+                    20px;
+            }
+
+
+            .sidebar-links {
+
+                display:
+                    flex;
+
+                flex-wrap:
+                    wrap;
+
+                gap:
+                    5px;
+            }
+
+
+            .sidebar-links li {
+
+                margin-bottom:
+                    0;
+            }
+
+
+            .nav-list a {
+
+                padding:
+                    7px 11px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     ENTIRE WEBSITE
+     ========================================= -->
+
+<div class="site-wrapper">
+
+
+    <!-- =====================================
+         HEADER
+         ===================================== -->
+
+    <header class="site-header">
+
+
+        <!-- LOGO -->
+
+        <div class="logo-area">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                Your Name
+            </a>
+
+        </div>
+
+
+        <!-- HEADER RIGHT SIDE -->
+
+        <div class="header-main">
+
+
+            <!-- WEBSITE DESCRIPTION -->
+
+            <div class="header-description">
+
+                <p>
+
+                    Welcome to my website.
+                    Explore my projects,
+                    experience, interests,
+                    and creative work.
+
+                </p>
+
+            </div>
+
+
+            <!--
+                JAVASCRIPT WILL INSERT
+                PRIMARY NAVIGATION HERE
+            -->
+
+            <div id="site-nav"></div>
+
+
+            <!--
+                JAVASCRIPT WILL INSERT
+                SECONDARY NAVIGATION HERE
+            -->
+
+            <div id="secondary-nav"></div>
+
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================
+         MAIN THREE-COLUMN AREA
+         ===================================== -->
+
+    <div class="content-grid">
+
+
+        <!-- =================================
+             LEFT SIDEBAR
+             ================================= -->
+
+        <aside class="left-sidebar">
+
+
+            <div class="sidebar-title">
+
+                Explore
+
+            </div>
+
+
+            <ul class="sidebar-links">
+
+
+                <li>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="projects.html">
+                        Projects
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="portfolio.html">
+                        Portfolio
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                </li>
+
+
+            </ul>
+
+        </aside>
+
+
+
+        <!-- =================================
+             MAIN CONTENT
+             ================================= -->
+
+        <main class="main-content">
+
+
+            <!-- HERO -->
+
+            <section class="hero">
+
+
+                <div class="hero-content">
+
+
+                    <h1>
+
+                        Welcome ✦
+
+                    </h1>
+
+
+                    <p>
+
+                        A little corner
+                        of the internet
+                        with a lot of pink.
+
+                    </p>
+
+
+                    <a
+                        href="projects.html"
+                        class="pink-button"
+                    >
+
+                        View My Projects
+
+                    </a>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 MAIN CONTENT AREA
+                 ================================= -->
+
+            <section>
+
+
+                <h2 class="content-title">
+
+                    Main Content Area
+
+                </h2>
+
+
+                <p>
+
+                    This is where the main content
+                    of your website goes. You can
+                    use this section for text,
+                    images, projects, information
+                    about yourself, blog posts,
+                    or whatever your website is
+                    about.
+
+                </p>
+
+
+                <p>
+
+                    You can also highlight
+                    important <span class="keyword">
+                    keywords</span> throughout
+                    your content using the pink
+                    theme.
+
+                </p>
+
+
+
+                <!-- =================================
+                     CARDS
+                     ================================= -->
+
+                <div class="card-grid">
+
+
+                    <article class="card">
+
+                        <h3>
+                            ✦ Project One
+                        </h3>
+
+                        <p>
+                            A short description
+                            of your project.
+                        </p>
+
+                    </article>
+
+
+                    <article class="card">
+
+                        <h3>
+                            ✧ Project Two
+                        </h3>
+
+                        <p>
+                            Another project,
+                            experience, or
+                            accomplishment.
+                        </p>
+
+                    </article>
+
+
+                    <article class="card">
+
+                        <h3>
+                            ♡ Project Three
+                        </h3>
+
+                        <p>
+                            Something else you
+                            want visitors to see.
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- =================================
+             RIGHT SIDEBAR
+             ================================= -->
+
+        <aside class="right-sidebar">
+
+
+            <div class="sticky-content">
+
+
+                <h3>
+
+                    ✦ Updates
+
+                </h3>
+
+
+                <a
+                    href="#"
+                    class="sticky-item"
+                >
+
+                    Latest News
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="sticky-item"
+                >
+
+                    Featured Project
+
+                </a>
+
+
+                <a
+                    href="#"
+                    class="sticky-item"
+                >
+
+                    Social Media
+
+                </a>
+
+
+            </div>
+
+
+        </aside>
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         FOOTER
+         ===================================== -->
+
+    <footer class="site-footer">
+
+
+        <p>
+
+            © 2026 Your Name
+
+            ·
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            ·
+
+            <a href="#">
+                Privacy
+            </a>
+
+        </p>
+
+
+    </footer>
+
+
+</div>
+
+
+<!-- =========================================
+     JAVASCRIPT
+
+     This connects your reusable navigation.js
+     ========================================= -->
+
+<script src="navigation.js"></script>
+
+
+</body>
+
+</html>
