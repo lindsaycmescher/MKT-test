@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Kitty Knits | Cat Sweaters</title>
 
     <style>
+        :root {
+            --background: #f7f7f5;
+            --surface: #ffffff;
+            --soft: #f1eee9;
+            --accent: #d98fa8;
+            --accent-dark: #a95f78;
+            --text: #333333;
+            --muted: #707070;
+            --border: #e4e0dc;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,261 +24,343 @@
         }
 
         body {
-            font-family: "Trebuchet MS", Arial, sans-serif;
-            background: #fff5fb;
-            color: #4a3040;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        /* MAIN CONTAINER */
+        .site-wrapper {
+            width: min(1100px, 92vw);
+            min-height: 100vh;
+            margin: 0 auto;
+            background: var(--surface);
+            border-left: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+        }
+
+        /* HEADER */
+        header {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 28px 42px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-dark);
+            text-decoration: none;
+        }
+
+        .tagline {
+            color: var(--muted);
+            font-size: 0.9rem;
+            text-align: right;
         }
 
         /* NAVIGATION */
         nav {
-            background: #ffb6d9;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 3px 12px rgba(190, 100, 150, 0.2);
-        }
-
-        .logo {
-            font-size: 26px;
-            font-weight: bold;
-            color: white;
-            text-shadow: 1px 1px 3px #c76a9b;
+            border-top: 1px solid var(--border);
+            background: var(--surface);
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            justify-content: center;
+            gap: 8px;
+            list-style: none;
         }
 
         .nav-links a {
+            display: block;
+            padding: 13px 20px;
+            color: var(--text);
             text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: 0.3s;
+            font-size: 0.9rem;
+            transition: 0.2s ease;
         }
 
-        .nav-links a:hover {
-            color: #7d405f;
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-dark);
+            background: var(--soft);
         }
 
         /* HERO */
         .hero {
-            text-align: center;
-            padding: 70px 20px 50px;
-            background: linear-gradient(135deg, #ffe3f0, #fff8fc);
+            margin: 42px 42px 0;
+            padding: 55px 45px;
+            background: #f8f3f1;
+            border: 1px solid var(--border);
+            border-radius: 14px;
         }
 
         .hero h1 {
-            font-size: 52px;
-            color: #d85b96;
-            margin-bottom: 15px;
+            max-width: 700px;
+            margin-bottom: 12px;
+            font-size: clamp(2.3rem, 5vw, 3.6rem);
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            color: var(--accent-dark);
         }
 
         .hero p {
-            font-size: 18px;
-            color: #765366;
-            max-width: 600px;
-            margin: auto;
-            line-height: 1.6;
-        }
-
-        .sparkles {
-            font-size: 25px;
-            margin-bottom: 15px;
+            max-width: 650px;
+            color: var(--muted);
+            font-size: 1rem;
         }
 
         /* PRODUCTS */
         .products-section {
-            padding: 55px 8%;
+            padding: 55px 42px;
         }
 
-        .section-title {
-            text-align: center;
-            color: #c94f8c;
-            font-size: 32px;
-            margin-bottom: 40px;
+        .section-heading {
+            margin-bottom: 28px;
+        }
+
+        .section-heading h2 {
+            margin-bottom: 5px;
+            font-size: 1.7rem;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 0.9rem;
         }
 
         .products {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 20px;
         }
 
         .product-card {
-            background: white;
-            border-radius: 20px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 5px 18px rgba(200, 100, 150, 0.15);
-            transition: 0.3s;
-            border: 2px solid #ffd6e9;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 18px;
+            transition: 0.2s ease;
         }
 
         .product-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 10px 25px rgba(200, 100, 150, 0.25);
+            transform: translateY(-3px);
+            border-color: #d5c2c8;
         }
 
         .product-image {
-            height: 230px;
-            border-radius: 15px;
-            background: #ffe6f1;
+            height: 210px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+            background: var(--soft);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 100px;
-            margin-bottom: 20px;
+            font-size: 80px;
         }
 
         .product-card h3 {
-            font-size: 22px;
-            color: #b9437c;
-            margin-bottom: 8px;
+            margin-bottom: 7px;
+            font-size: 1.05rem;
         }
 
         .description {
-            color: #806273;
-            font-size: 14px;
-            margin-bottom: 12px;
+            min-height: 65px;
+            margin-bottom: 10px;
+            color: var(--muted);
+            font-size: 0.86rem;
         }
 
         .price {
-            font-size: 21px;
-            font-weight: bold;
-            color: #d45691;
-            margin-bottom: 15px;
+            margin-bottom: 3px;
+            color: var(--accent-dark);
+            font-size: 1.1rem;
+            font-weight: 700;
         }
 
         .sizes {
-            font-size: 13px;
-            color: #806273;
-            margin-bottom: 18px;
+            margin-bottom: 15px;
+            color: var(--muted);
+            font-size: 0.78rem;
         }
 
         .button {
             display: inline-block;
-            background: #ed82b3;
+            width: 100%;
+            padding: 10px 16px;
             color: white;
-            padding: 11px 25px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
+            background: var(--accent-dark);
             border: none;
+            border-radius: 6px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.2s ease;
         }
 
         .button:hover {
-            background: #c94f8c;
-            transform: scale(1.05);
+            background: #8e4f65;
         }
 
         /* FEATURES */
         .features {
-            background: #ffe4f0;
-            padding: 50px 8%;
-            text-align: center;
+            margin: 0 42px 55px;
+            padding: 35px;
+            background: #faf9f7;
+            border: 1px solid var(--border);
+            border-radius: 10px;
         }
 
         .features h2 {
-            color: #c94f8c;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            text-align: center;
         }
 
         .feature-container {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-
-        .feature {
-            max-width: 200px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            text-align: center;
         }
 
         .feature-icon {
-            font-size: 40px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 28px;
         }
 
         .feature h3 {
-            color: #a63f72;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
+            font-size: 0.95rem;
         }
 
         .feature p {
-            font-size: 14px;
-            color: #765366;
+            color: var(--muted);
+            font-size: 0.82rem;
         }
 
         /* REVIEWS */
         .reviews {
-            padding: 55px 8%;
-            text-align: center;
+            padding: 0 42px 60px;
         }
 
         .reviews h2 {
-            color: #c94f8c;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
         }
 
         .review-container {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
         }
 
         .review {
-            background: white;
-            padding: 25px;
-            border-radius: 18px;
-            max-width: 300px;
-            box-shadow: 0 4px 15px rgba(200, 100, 150, 0.12);
+            padding: 22px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
         }
 
         .stars {
-            color: #e88ab4;
-            font-size: 20px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            color: var(--accent);
+            letter-spacing: 2px;
         }
 
         .review p {
-            font-size: 14px;
-            line-height: 1.5;
+            margin-bottom: 12px;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .review strong {
+            font-size: 0.82rem;
         }
 
         /* FOOTER */
         footer {
-            background: #d85b96;
-            color: white;
+            padding: 25px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            background: #faf9f7;
             text-align: center;
-            padding: 30px;
+            font-size: 0.8rem;
         }
 
-        footer p {
-            margin: 5px;
+        footer .footer-name {
+            margin-bottom: 4px;
+            color: var(--accent-dark);
+            font-weight: 700;
         }
 
         /* MOBILE */
         @media (max-width: 800px) {
-            .products {
-                grid-template-columns: 1fr;
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                padding: 25px;
             }
 
-            nav {
-                flex-direction: column;
-                gap: 15px;
+            .tagline {
+                text-align: left;
             }
 
             .nav-links {
-                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .nav-links a {
+                padding: 10px 13px;
+            }
+
+            .hero {
+                margin: 25px 25px 0;
+                padding: 35px;
+            }
+
+            .products-section {
+                padding: 40px 25px;
+            }
+
+            .products,
+            .feature-container,
+            .review-container {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                margin: 0 25px 45px;
+            }
+
+            .reviews {
+                padding: 0 25px 45px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .product-image {
+                height: 180px;
             }
 
             .hero h1 {
-                font-size: 38px;
+                font-size: 2.2rem;
             }
         }
     </style>
@@ -276,24 +368,31 @@
 
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="logo">🐱 Kitty Knits ✨</div>
+<div class="site-wrapper">
 
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="products.html">Sweaters</a>
-            <a href="#about">About</a>
-            <a href="#reviews">Reviews</a>
+    <!-- HEADER -->
+    <header>
+        <div class="header-top">
+            <a href="index.html" class="logo">Kitty Knits</a>
+
+            <div class="tagline">
+                Cozy sweaters for your favorite little furball.
+            </div>
         </div>
-    </nav>
 
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Sweaters</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- HERO -->
     <section class="hero">
-        <div class="sparkles">✨ 🐾 ✨ 🐾 ✨</div>
-
-        <h1>Cozy Sweaters for Cool Cats</h1>
+        <h1>Cozy sweaters for <span>cool cats.</span></h1>
 
         <p>
             Keep your favorite feline warm, cozy, and ridiculously cute
@@ -301,214 +400,115 @@
         </p>
     </section>
 
-
     <!-- PRODUCTS -->
     <section class="products-section">
 
-        <h2 class="section-title">Shop Our Cat Sweaters 🧶</h2>
+        <div class="section-heading">
+            <h2>Shop Cat Sweaters</h2>
+            <p>Comfortable styles for cats with plenty of personality.</p>
+        </div>
 
         <div class="products">
 
-            <!-- PRODUCT 1 -->
             <div class="product-card">
-
-                <div class="product-image">
-                    🐱
-                </div>
-
+                <div class="product-image">🐱</div>
                 <h3>Pink Princess Sweater</h3>
-
                 <p class="description">
                     A soft pink sweater made for cats who know they're royalty.
                 </p>
-
                 <p class="price">$24.99</p>
-
-                <p class="sizes">
-                    Sizes: XS • S • M • L
-                </p>
-
-                <button class="button">
-                    Add to Cart 🛒
-                </button>
-
+                <p class="sizes">Sizes: XS • S • M • L</p>
+                <button class="button">Add to Cart</button>
             </div>
 
-
-            <!-- PRODUCT 2 -->
             <div class="product-card">
-
-                <div class="product-image">
-                    🐈
-                </div>
-
+                <div class="product-image">🐈</div>
                 <h3>Cozy Cream Knit</h3>
-
                 <p class="description">
                     A classic cream-colored knit for maximum cozy season vibes.
                 </p>
-
                 <p class="price">$27.99</p>
-
-                <p class="sizes">
-                    Sizes: XS • S • M • L
-                </p>
-
-                <button class="button">
-                    Add to Cart 🛒
-                </button>
-
+                <p class="sizes">Sizes: XS • S • M • L</p>
+                <button class="button">Add to Cart</button>
             </div>
 
-
-            <!-- PRODUCT 3 -->
             <div class="product-card">
-
-                <div class="product-image">
-                    😺
-                </div>
-
+                <div class="product-image">😺</div>
                 <h3>Strawberry Sprinkle</h3>
-
                 <p class="description">
                     Pink, playful, and covered in adorable little strawberry details.
                 </p>
-
                 <p class="price">$29.99</p>
-
-                <p class="sizes">
-                    Sizes: XS • S • M • L
-                </p>
-
-                <button class="button">
-                    Add to Cart 🛒
-                </button>
-
+                <p class="sizes">Sizes: XS • S • M • L</p>
+                <button class="button">Add to Cart</button>
             </div>
 
-
-            <!-- PRODUCT 4 -->
             <div class="product-card">
-
-                <div class="product-image">
-                    🐱
-                </div>
-
+                <div class="product-image">🐱</div>
                 <h3>Lavender Dream</h3>
-
                 <p class="description">
                     A dreamy lavender sweater perfect for chilly evenings.
                 </p>
-
                 <p class="price">$25.99</p>
-
-                <p class="sizes">
-                    Sizes: XS • S • M • L
-                </p>
-
-                <button class="button">
-                    Add to Cart 🛒
-                </button>
-
+                <p class="sizes">Sizes: XS • S • M • L</p>
+                <button class="button">Add to Cart</button>
             </div>
 
-
-            <!-- PRODUCT 5 -->
             <div class="product-card">
-
-                <div class="product-image">
-                    🐈‍⬛
-                </div>
-
+                <div class="product-image">🐈‍⬛</div>
                 <h3>Midnight Kitty</h3>
-
                 <p class="description">
                     A sleek charcoal sweater for cats with serious style.
                 </p>
-
                 <p class="price">$26.99</p>
-
-                <p class="sizes">
-                    Sizes: XS • S • M • L
-                </p>
-
-                <button class="button">
-                    Add to Cart 🛒
-                </button>
-
+                <p class="sizes">Sizes: XS • S • M • L</p>
+                <button class="button">Add to Cart</button>
             </div>
 
-
-            <!-- PRODUCT 6 -->
             <div class="product-card">
-
-                <div class="product-image">
-                    🐾
-                </div>
-
+                <div class="product-image">🐾</div>
                 <h3>Bubblegum Bow</h3>
-
                 <p class="description">
                     A bright pink sweater finished with an adorable bow.
                 </p>
-
                 <p class="price">$31.99</p>
-
-                <p class="sizes">
-                    Sizes: XS • S • M • L
-                </p>
-
-                <button class="button">
-                    Add to Cart 🛒
-                </button>
-
+                <p class="sizes">Sizes: XS • S • M • L</p>
+                <button class="button">Add to Cart</button>
             </div>
 
         </div>
-
     </section>
-
 
     <!-- FEATURES -->
     <section class="features" id="about">
-
-        <h2>Why Cats Love Kitty Knits 💗</h2>
+        <h2>Why Cats Love Kitty Knits</h2>
 
         <div class="feature-container">
 
             <div class="feature">
                 <div class="feature-icon">🧶</div>
                 <h3>Super Soft</h3>
-                <p>
-                    Cozy materials designed for comfortable lounging.
-                </p>
+                <p>Cozy materials designed for comfortable lounging.</p>
             </div>
 
             <div class="feature">
                 <div class="feature-icon">🐾</div>
                 <h3>Cat Friendly</h3>
-                <p>
-                    Designed with your cat's comfort and movement in mind.
-                </p>
+                <p>Designed with your cat's comfort and movement in mind.</p>
             </div>
 
             <div class="feature">
                 <div class="feature-icon">✨</div>
                 <h3>Too Cute</h3>
-                <p>
-                    Because your cat deserves to be the best dressed on the block.
-                </p>
+                <p>Because your cat deserves to be the best dressed on the block.</p>
             </div>
 
         </div>
-
     </section>
-
 
     <!-- REVIEWS -->
     <section class="reviews" id="reviews">
-
-        <h2>What Cat Parents Are Saying 💕</h2>
+        <h2>What Cat Parents Are Saying</h2>
 
         <div class="review-container">
 
@@ -518,7 +518,6 @@
                     "My cat actually keeps it on! She looks like a tiny
                     little princess."
                 </p>
-                <br>
                 <strong>— Emma & Luna 🐱</strong>
             </div>
 
@@ -528,7 +527,6 @@
                     "The sweater is adorable and so soft. Definitely ordering
                     another one!"
                 </p>
-                <br>
                 <strong>— Sarah & Milo 🐾</strong>
             </div>
 
@@ -538,21 +536,20 @@
                     "The cutest thing I've ever bought for my cat. The photos
                     are endless."
                 </p>
-                <br>
                 <strong>— Katie & Mochi ✨</strong>
             </div>
 
         </div>
-
     </section>
-
 
     <!-- FOOTER -->
     <footer>
-        <p>🐱 Kitty Knits ✨</p>
+        <p class="footer-name">Kitty Knits</p>
         <p>Cozy sweaters for your favorite little furball.</p>
         <p>© 2026 Kitty Knits</p>
     </footer>
+
+</div>
 
 </body>
 </html>
