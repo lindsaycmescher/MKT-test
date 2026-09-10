@@ -12,8 +12,8 @@ const navigation = [
         url: "about.html"
     },
     {
-        name: "Projects",
-        url: "projects.html"
+        name: "Products",
+        url: "products.html"
     },
     {
         name: "Contact",
