@@ -1,1469 +1,449 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>My Pink Website</title>
-
-
-    <!-- =====================================
-         ALL CSS IS INSIDE THIS HTML FILE
-         ===================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lindsay | Portfolio</title>
 
     <style>
-
-        /* =====================================
-           COLORS
-           ===================================== */
-
         :root {
-            --pink-background: #fce7f3;
-            --pink-light: #fff7fb;
-            --pink-soft: #fbcfe8;
-            --pink: #f9a8d4;
-            --pink-medium: #ec4899;
-            --pink-dark: #be185d;
-
-            --text: #4a2940;
-
-            --white: #ffffff;
-
-            --border: #f3b5d1;
-
-            --shadow:
-                0 5px 20px rgba(190, 24, 93, 0.12);
+            --background: #f7f7f5;
+            --surface: #ffffff;
+            --soft: #f1eee9;
+            --accent: #d98fa8;
+            --accent-dark: #a95f78;
+            --text: #333333;
+            --muted: #707070;
+            --border: #e4e0dc;
         }
-
-
-        /* =====================================
-           BASIC RESET
-           ===================================== */
 
         * {
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
-
             margin: 0;
-
-            min-height: 100vh;
-
-            font-family:
-                "Trebuchet MS",
-                Arial,
-                sans-serif;
-
+            font-family: Arial, Helvetica, sans-serif;
             color: var(--text);
-
-            /*
-               LIGHT PINK OUTER BACKGROUND
-            */
-
-            background-color:
-                var(--pink-background);
-
-
-            /*
-               SPARKLE PATTERN
-            */
-
-            background-image:
-
-                radial-gradient(
-                    circle,
-                    rgba(255,255,255,0.9) 0 2px,
-                    transparent 2.5px
-                ),
-
-                radial-gradient(
-                    circle,
-                    rgba(255,255,255,0.75) 0 1.5px,
-                    transparent 2px
-                ),
-
-                radial-gradient(
-                    circle,
-                    rgba(255,255,255,0.8) 0 1px,
-                    transparent 2px
-                );
-
-
-            background-size:
-
-                100px 100px,
-                150px 150px,
-                75px 75px;
-
-
-            background-position:
-
-                0 0,
-                30px 40px,
-                70px 20px;
-
-
-            overflow-x: hidden;
+            background: var(--background);
+            line-height: 1.6;
         }
 
-
-        /* =====================================
-           MAIN WEBSITE
-
-           80% width
-           10% pink space on each side
-           ===================================== */
+        a {
+            color: inherit;
+        }
 
         .site-wrapper {
-
-            width: 80vw;
-
+            width: min(1100px, 92vw);
             min-height: 100vh;
-
             margin: 0 auto;
-
-            background:
-                rgba(255,247,251,0.97);
-
-
-            border-left:
-                2px solid var(--border);
-
-            border-right:
-                2px solid var(--border);
-
-
-            box-shadow:
-
-                0 0 30px
-                rgba(190,24,93,0.12),
-
-                0 0 70px
-                rgba(236,72,153,0.08);
+            background: var(--surface);
+            border-left: 1px solid var(--border);
+            border-right: 1px solid var(--border);
         }
 
-
-        /* =====================================
-           HEADER
-           ===================================== */
-
+        /* HEADER */
         .site-header {
-
-            display: grid;
-
-            grid-template-columns:
-                20% 80%;
-
-            min-height: 140px;
-
-            border-bottom:
-                2px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
 
-
-        /* =====================================
-           LOGO
-           ===================================== */
-
-        .logo-area {
-
+        .header-top {
             display: flex;
-
             align-items: center;
-
-            justify-content: center;
-
-            padding: 20px;
-
-
-            background:
-
-                linear-gradient(
-                    135deg,
-                    var(--pink-soft),
-                    var(--pink-light)
-                );
-
-
-            border-right:
-                2px solid var(--border);
+            justify-content: space-between;
+            padding: 28px 42px;
         }
-
 
         .logo {
-
-            color: var(--pink-dark);
-
+            color: var(--accent-dark);
             text-decoration: none;
-
-            font-size:
-                clamp(1.5rem, 3vw, 2.4rem);
-
-            font-weight: bold;
-
-            text-align: center;
-
-
-            text-shadow:
-                0 2px 10px
-                rgba(190,24,93,0.15);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.3px;
         }
-
-
-        .logo::after {
-
-            content: " ✦";
-
-            color:
-                var(--pink-medium);
-        }
-
-
-        /* =====================================
-           HEADER MAIN AREA
-           ===================================== */
-
-        .header-main {
-
-            display: flex;
-
-            flex-direction: column;
-        }
-
-
-        /* =====================================
-           WEBSITE DESCRIPTION
-           ===================================== */
 
         .header-description {
-
-            flex: 1;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            padding:
-                15px 30px;
-
-            text-align: center;
-
-            background:
-                var(--pink-light);
-        }
-
-
-        .header-description p {
-
-            max-width: 700px;
-
-            margin: 0;
-
-            line-height: 1.5;
-
+            max-width: 520px;
+            color: var(--muted);
             font-size: 0.9rem;
+            text-align: right;
         }
 
-
-        /* =====================================
-           PRIMARY NAVIGATION
-           ===================================== */
-
+        /* NAVIGATION */
         .primary-nav {
-
-            min-height: 40px;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            border-top:
-                1px solid var(--border);
-
-            border-bottom:
-                1px solid var(--border);
-
-            background:
-                #fffafd;
+            border-top: 1px solid var(--border);
+            background: var(--surface);
         }
-
 
         .nav-list {
-
             display: flex;
-
             justify-content: center;
-
-            align-items: center;
-
-            flex-wrap: wrap;
-
-            gap: 4px;
-
+            gap: 8px;
             list-style: none;
-
             padding: 0;
-
             margin: 0;
         }
-
-
-        .nav-list li {
-
-            margin: 0;
-        }
-
 
         .nav-list a {
-
             display: block;
-
-            padding:
-                7px 18px;
-
-            color:
-                var(--pink-dark);
-
+            padding: 13px 20px;
+            color: var(--text);
             text-decoration: none;
-
-            font-size: 0.85rem;
-
-            font-weight: bold;
-
-            border-radius: 20px;
-
-            transition:
-                background 0.2s ease,
-                color 0.2s ease,
-                transform 0.2s ease;
+            font-size: 0.9rem;
+            transition: color 0.2s ease, background 0.2s ease;
         }
 
-
-        .nav-list a:hover {
-
-            color: white;
-
-            background:
-                var(--pink-medium);
-
-            transform:
-                translateY(-2px);
-        }
-
-
+        .nav-list a:hover,
         .nav-list a.active {
-
-            color: white;
-
-            background:
-                var(--pink-dark);
-
-            box-shadow:
-                0 3px 10px
-                rgba(190,24,93,0.2);
+            color: var(--accent-dark);
+            background: var(--soft);
         }
 
-
-        /* =====================================
-           SECONDARY NAVIGATION
-           ===================================== */
-
-        .secondary-nav {
-
-            min-height: 30px;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            background:
-                #fff7fb;
-
-            font-size: 0.75rem;
-        }
-
-
-        .secondary-nav a {
-
-            margin:
-                0 10px;
-
-            color:
-                var(--pink-medium);
-
-            text-decoration: none;
-        }
-
-
-        .secondary-nav a:hover {
-
-            color:
-                var(--pink-dark);
-
-            text-decoration: underline;
-        }
-
-
-        /* =====================================
-           THREE COLUMN CONTENT AREA
-           ===================================== */
-
+        /* CONTENT */
         .content-grid {
-
             display: grid;
-
-            grid-template-columns:
-
-                18%
-                64%
-                18%;
-
+            grid-template-columns: 180px 1fr;
             min-height: 600px;
         }
 
-
-        /* =====================================
-           LEFT SIDEBAR
-           ===================================== */
-
         .left-sidebar {
-
-            padding:
-                25px 15px;
-
-            background:
-
-                linear-gradient(
-                    180deg,
-                    #fce7f3,
-                    #fff7fb
-                );
-
-            border-right:
-                2px solid var(--border);
+            padding: 35px 22px;
+            background: #faf9f7;
+            border-right: 1px solid var(--border);
         }
-
 
         .sidebar-title {
-
-            margin-bottom:
-                18px;
-
-            color:
-                var(--pink-dark);
-
-            font-size:
-                0.8rem;
-
-            font-weight:
-                bold;
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                1px;
+            margin: 0 0 18px;
+            color: var(--accent-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
         }
-
 
         .sidebar-links {
-
-            list-style:
-                none;
-
-            padding:
-                0;
-
-            margin:
-                0;
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
-
 
         .sidebar-links li {
-
-            margin-bottom:
-                8px;
+            margin-bottom: 5px;
         }
-
 
         .sidebar-links a {
-
-            display:
-                block;
-
-            padding:
-                8px 10px;
-
-            color:
-                var(--text);
-
-            text-decoration:
-                none;
-
-            border-radius:
-                8px;
-
-            transition:
-                0.2s ease;
+            display: block;
+            padding: 8px 10px;
+            color: var(--muted);
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            transition: 0.2s ease;
         }
-
 
         .sidebar-links a:hover {
-
-            color:
-                var(--pink-dark);
-
-            background:
-                var(--pink-soft);
-
-            transform:
-                translateX(4px);
+            color: var(--accent-dark);
+            background: var(--soft);
         }
-
-
-        /* =====================================
-           MAIN CONTENT
-           ===================================== */
 
         .main-content {
-
-            padding:
-                25px 30px;
-
-            background:
-                rgba(255,255,255,0.7);
+            padding: 42px;
         }
 
-
-        /* =====================================
-           HERO
-           ===================================== */
-
+        /* HERO */
         .hero {
-
-            position:
-                relative;
-
-            min-height:
-                220px;
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            margin-bottom:
-                25px;
-
-            overflow:
-                hidden;
-
-            border:
-                2px solid var(--border);
-
-            border-radius:
-                15px;
-
-
-            background:
-
-                linear-gradient(
-                    135deg,
-                    #fbcfe8,
-                    #fff7fb,
-                    #fce7f3
-                );
-
-
-            box-shadow:
-                var(--shadow);
+            display: flex;
+            align-items: center;
+            min-height: 310px;
+            padding: 55px;
+            margin-bottom: 45px;
+            background: #f8f3f1;
+            border: 1px solid var(--border);
+            border-radius: 14px;
         }
-
-
-        /* Decorative sparkles */
-
-        .hero::before {
-
-            content:
-                "✦     ✧     ✦     ✧";
-
-            position:
-                absolute;
-
-            top:
-                15px;
-
-            right:
-                20px;
-
-            color:
-                rgba(190,24,93,0.25);
-
-            font-size:
-                1.2rem;
-
-            letter-spacing:
-                5px;
-        }
-
-
-        .hero::after {
-
-            content:
-                "✧     ✦     ✧";
-
-            position:
-                absolute;
-
-            bottom:
-                15px;
-
-            left:
-                20px;
-
-            color:
-                rgba(236,72,153,0.25);
-
-            font-size:
-                1rem;
-        }
-
 
         .hero-content {
-
-            position:
-                relative;
-
-            z-index:
-                1;
-
-            text-align:
-                center;
+            max-width: 680px;
         }
-
 
         .hero h1 {
-
-            margin:
-                0 0 10px;
-
-            color:
-                var(--pink-dark);
-
-            font-size:
-                clamp(2rem,4vw,3rem);
+            margin: 0 0 12px;
+            color: var(--text);
+            font-size: clamp(2.3rem, 5vw, 4rem);
+            line-height: 1.1;
         }
 
+        .hero h1 span {
+            color: var(--accent-dark);
+        }
 
         .hero p {
-
-            margin:
-                0;
-
-            font-size:
-                0.95rem;
+            max-width: 580px;
+            margin: 0 0 25px;
+            color: var(--muted);
+            font-size: 1rem;
         }
 
+        .button {
+            display: inline-block;
+            padding: 10px 18px;
+            color: white;
+            background: var(--accent-dark);
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.2s ease;
+        }
 
-        /* =====================================
-           MAIN CONTENT TEXT
-           ===================================== */
+        .button:hover {
+            background: #8e4f65;
+            transform: translateY(-1px);
+        }
 
+        /* INTRO */
         .content-title {
-
-            margin-top:
-                0;
-
-            color:
-                var(--pink-dark);
-
-            font-size:
-                1.7rem;
+            margin: 0 0 12px;
+            color: var(--text);
+            font-size: 1.7rem;
         }
-
 
         .main-content p {
-
-            line-height:
-                1.7;
+            color: var(--muted);
         }
-
 
         .keyword {
-
-            color:
-                var(--pink-dark);
-
-            font-weight:
-                bold;
+            color: var(--accent-dark);
+            font-weight: 600;
         }
 
-
-        /* =====================================
-           CARDS
-           ===================================== */
-
+        /* CARDS */
         .card-grid {
-
-            display:
-                grid;
-
-            grid-template-columns:
-
-                repeat(
-                    auto-fit,
-                    minmax(180px,1fr)
-                );
-
-            gap:
-                15px;
-
-            margin-top:
-                25px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 30px;
         }
-
 
         .card {
-
-            padding:
-                18px;
-
-            background:
-                white;
-
-            border:
-                1px solid var(--border);
-
-            border-radius:
-                12px;
-
-            box-shadow:
-                var(--shadow);
-
-            transition:
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
+            padding: 22px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition: 0.2s ease;
         }
-
 
         .card:hover {
-
-            transform:
-                translateY(-4px);
-
-            box-shadow:
-                0 10px 25px
-                rgba(190,24,93,0.16);
+            transform: translateY(-3px);
+            border-color: #d5c2c8;
         }
-
 
         .card h3 {
-
-            margin-top:
-                0;
-
-            color:
-                var(--pink-dark);
+            margin: 0 0 8px;
+            color: var(--text);
+            font-size: 1rem;
         }
 
-
-        /* =====================================
-           RIGHT SIDEBAR
-           ===================================== */
-
-        .right-sidebar {
-
-            padding:
-                25px 15px;
-
-            background:
-
-                linear-gradient(
-                    180deg,
-                    #fce7f3,
-                    #fff7fb
-                );
-
-            border-left:
-                2px solid var(--border);
+        .card p {
+            margin: 0;
+            font-size: 0.88rem;
         }
 
-
-        /* Sticky content */
-
-        .sticky-content {
-
-            position:
-                sticky;
-
-            top:
-                20px;
-        }
-
-
-        .sticky-content h3 {
-
-            margin-top:
-                0;
-
-            color:
-                var(--pink-dark);
-        }
-
-
-        .sticky-item {
-
-            display:
-                block;
-
-            margin-bottom:
-                10px;
-
-            padding:
-                11px;
-
-            color:
-                var(--text);
-
-            text-decoration:
-                none;
-
-            background:
-                white;
-
-            border:
-                1px solid var(--border);
-
-            border-radius:
-                9px;
-
-            font-size:
-                0.85rem;
-
-            transition:
-                0.2s ease;
-        }
-
-
-        .sticky-item:hover {
-
-            color:
-                var(--pink-dark);
-
-            background:
-                #fff0f7;
-
-            transform:
-                translateY(-2px);
-        }
-
-
-        /* =====================================
-           PINK BUTTON
-           ===================================== */
-
-        .pink-button {
-
-            display:
-                inline-block;
-
-            margin-top:
-                12px;
-
-            padding:
-                10px 20px;
-
-            color:
-                white;
-
-            background:
-                var(--pink-medium);
-
-            border-radius:
-                25px;
-
-            text-decoration:
-                none;
-
-            font-weight:
-                bold;
-
-            box-shadow:
-                0 4px 12px
-                rgba(236,72,153,0.25);
-
-            transition:
-                0.2s ease;
-        }
-
-
-        .pink-button:hover {
-
-            background:
-                var(--pink-dark);
-
-            transform:
-                translateY(-2px);
-        }
-
-
-        /* =====================================
-           FOOTER
-           ===================================== */
-
+        /* FOOTER */
         .site-footer {
-
-            min-height:
-                65px;
-
-            display:
-                flex;
-
-            justify-content:
-                center;
-
-            align-items:
-                center;
-
-            padding:
-                15px 20px;
-
-            text-align:
-                center;
-
-            background:
-                var(--pink-soft);
-
-            border-top:
-                2px solid var(--border);
-
-            color:
-                var(--pink-dark);
-
-            font-size:
-                0.8rem;
+            padding: 22px 30px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            text-align: center;
+            font-size: 0.8rem;
         }
-
 
         .site-footer a {
-
-            color:
-                var(--pink-dark);
+            color: var(--accent-dark);
         }
 
-
-        /* =====================================
-           MOBILE
-           ===================================== */
-
-        @media (max-width: 850px) {
-
-            .site-wrapper {
-
-                width:
-                    92vw;
+        /* MOBILE */
+        @media (max-width: 800px) {
+            .header-top {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 25px;
             }
 
-
-            .site-header {
-
-                grid-template-columns:
-                    1fr;
+            .header-description {
+                text-align: left;
             }
-
-
-            .logo-area {
-
-                min-height:
-                    90px;
-
-                border-right:
-                    none;
-
-                border-bottom:
-                    2px solid var(--border);
-            }
-
 
             .content-grid {
-
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
             }
-
 
             .left-sidebar {
-
-                border-right:
-                    none;
-
-                border-bottom:
-                    2px solid var(--border);
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 20px 25px;
             }
-
-
-            .right-sidebar {
-
-                display:
-                    none;
-            }
-
-
-            .main-content {
-
-                padding:
-                    20px;
-            }
-
 
             .sidebar-links {
-
-                display:
-                    flex;
-
-                flex-wrap:
-                    wrap;
-
-                gap:
-                    5px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
             }
-
 
             .sidebar-links li {
-
-                margin-bottom:
-                    0;
+                margin: 0;
             }
 
+            .main-content {
+                padding: 25px;
+            }
 
-            .nav-list a {
+            .hero {
+                min-height: 260px;
+                padding: 35px;
+            }
 
-                padding:
-                    7px 11px;
+            .card-grid {
+                grid-template-columns: 1fr;
             }
         }
 
+        @media (max-width: 550px) {
+            .nav-list {
+                flex-wrap: wrap;
+            }
+
+            .nav-list a {
+                padding: 10px 12px;
+            }
+
+            .hero {
+                padding: 28px;
+            }
+        }
     </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================================
-     ENTIRE WEBSITE
-     ========================================= -->
-
 <div class="site-wrapper">
-
-
-    <!-- =====================================
-         HEADER
-         ===================================== -->
 
     <header class="site-header">
 
-
-        <!-- LOGO -->
-
-        <div class="logo-area">
-
-            <a
-                href="index.html"
-                class="logo"
-            >
-                Your Name
-            </a>
-
-        </div>
-
-
-        <!-- HEADER RIGHT SIDE -->
-
-        <div class="header-main">
-
-
-            <!-- WEBSITE DESCRIPTION -->
+        <div class="header-top">
+            <a href="index.html" class="logo">Lindsay</a>
 
             <div class="header-description">
-
-                <p>
-
-                    Welcome to my website.
-                    Explore my projects,
-                    experience, interests,
-                    and creative work.
-
-                </p>
-
+                Marketing, creativity, and strategy in one place.
             </div>
-
-
-            <!--
-                JAVASCRIPT WILL INSERT
-                PRIMARY NAVIGATION HERE
-            -->
-
-            <div id="site-nav"></div>
-
-
-            <!--
-                JAVASCRIPT WILL INSERT
-                SECONDARY NAVIGATION HERE
-            -->
-
-            <div id="secondary-nav"></div>
-
-
         </div>
+
+        <nav class="primary-nav">
+            <ul class="nav-list">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Work</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
 
     </header>
 
-
-
-    <!-- =====================================
-         MAIN THREE-COLUMN AREA
-         ===================================== -->
-
     <div class="content-grid">
 
-
-        <!-- =================================
-             LEFT SIDEBAR
-             ================================= -->
-
         <aside class="left-sidebar">
-
-
-            <div class="sidebar-title">
-
-                Explore
-
-            </div>
-
+            <div class="sidebar-title">Explore</div>
 
             <ul class="sidebar-links">
-
-
-                <li>
-
-                    <a href="index.html">
-                        Home
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="about.html">
-                        About
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="projects.html">
-                        Projects
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="portfolio.html">
-                        Portfolio
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="contact.html">
-                        Contact
-                    </a>
-
-                </li>
-
-
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-
         </aside>
-
-
-
-        <!-- =================================
-             MAIN CONTENT
-             ================================= -->
 
         <main class="main-content">
 
-
-            <!-- HERO -->
-
             <section class="hero">
-
-
                 <div class="hero-content">
-
-
-                    <h1>
-
-                        Welcome ✦
-
-                    </h1>
-
+                    <h1>Hello, I'm <span>Lindsay.</span></h1>
 
                     <p>
-
-                        A little corner
-                        of the internet
-                        with a lot of pink.
-
+                        Welcome to my portfolio. Explore my experience,
+                        creative projects, marketing work, and the skills
+                        I've developed along the way.
                     </p>
 
-
-                    <a
-                        href="projects.html"
-                        class="pink-button"
-                    >
-
-                        View My Projects
-
+                    <a href="projects.html" class="button">
+                        View My Work
                     </a>
-
-
                 </div>
-
             </section>
 
-
-
-            <!-- =================================
-                 MAIN CONTENT AREA
-                 ================================= -->
-
             <section>
-
-
-                <h2 class="content-title">
-
-                    Main Content Area
-
-                </h2>
-
+                <h2 class="content-title">A little about my work</h2>
 
                 <p>
-
-                    This is where the main content
-                    of your website goes. You can
-                    use this section for text,
-                    images, projects, information
-                    about yourself, blog posts,
-                    or whatever your website is
-                    about.
-
+                    I'm a marketing student interested in
+                    <span class="keyword">digital marketing</span>,
+                    brand strategy, content creation, and finding creative
+                    ways to connect ideas with people.
                 </p>
-
 
                 <p>
-
-                    You can also highlight
-                    important <span class="keyword">
-                    keywords</span> throughout
-                    your content using the pink
-                    theme.
-
+                    My background also gives me an analytical perspective,
+                    helping me approach projects with both creativity
+                    and problem-solving in mind.
                 </p>
-
-
-
-                <!-- =================================
-                     CARDS
-                     ================================= -->
 
                 <div class="card-grid">
 
-
                     <article class="card">
-
-                        <h3>
-                            ✦ Project One
-                        </h3>
-
+                        <h3>Marketing</h3>
                         <p>
-                            A short description
-                            of your project.
+                            Brand development, digital marketing,
+                            SEO, and content strategy.
                         </p>
-
                     </article>
 
-
                     <article class="card">
-
-                        <h3>
-                            ✧ Project Two
-                        </h3>
-
+                        <h3>Creative Work</h3>
                         <p>
-                            Another project,
-                            experience, or
-                            accomplishment.
+                            Social media, visual storytelling,
+                            design, and content creation.
                         </p>
-
                     </article>
 
-
                     <article class="card">
-
-                        <h3>
-                            ♡ Project Three
-                        </h3>
-
+                        <h3>Experience</h3>
                         <p>
-                            Something else you
-                            want visitors to see.
+                            Explore my projects, leadership experience,
+                            and professional work.
                         </p>
-
                     </article>
-
 
                 </div>
-
-
             </section>
-
 
         </main>
 
-
-
-        <!-- =================================
-             RIGHT SIDEBAR
-             ================================= -->
-
-        <aside class="right-sidebar">
-
-
-            <div class="sticky-content">
-
-
-                <h3>
-
-                    ✦ Updates
-
-                </h3>
-
-
-                <a
-                    href="#"
-                    class="sticky-item"
-                >
-
-                    Latest News
-
-                </a>
-
-
-                <a
-                    href="#"
-                    class="sticky-item"
-                >
-
-                    Featured Project
-
-                </a>
-
-
-                <a
-                    href="#"
-                    class="sticky-item"
-                >
-
-                    Social Media
-
-                </a>
-
-
-            </div>
-
-
-        </aside>
-
-
     </div>
 
-
-
-    <!-- =====================================
-         FOOTER
-         ===================================== -->
-
     <footer class="site-footer">
-
-
         <p>
-
-            © 2026 Your Name
-
-            ·
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-            ·
-
-            <a href="#">
-                Privacy
-            </a>
-
+            © 2026 Lindsay ·
+            <a href="contact.html">Contact</a>
         </p>
-
-
     </footer>
-
 
 </div>
 
-
-<!-- =========================================
-     JAVASCRIPT
-
-     This connects your reusable navigation.js
-     ========================================= -->
-
-<script src="navigation.js"></script>
-
-
 </body>
-
 </html>
