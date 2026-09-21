@@ -1,164 +1,57 @@
-/* =========================================
-   REUSABLE SITE NAVIGATION
-   ========================================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-const navigation = [
-    {
-        name: "Home",
-        url: "index.html"
-    },
-    {
-        name: "About",
-        url: "about.html"
-    },
-    {
-        name: "Products",
-        url: "products.html"
-    },
-    {
-        name: "Contact",
-        url: "contact.html"
+    const navigation = document.getElementById("navigation");
+
+    if (!navigation) {
+        return;
     }
-];
 
-
-/* -----------------------------------------
-   CREATE NAVIGATION
-   ----------------------------------------- */
-
-function createNavigation() {
-
-    const navContainer = document.getElementById("site-nav");
-
-    if (!navContainer) return;
 
     const currentPage =
         window.location.pathname.split("/").pop() || "index.html";
 
-    const nav = document.createElement("nav");
 
-    nav.className = "primary-nav";
-    nav.setAttribute("aria-label", "Primary navigation");
+    navigation.innerHTML = `
 
-    const list = document.createElement("ul");
+        <nav class="primary-nav">
 
-    list.className = "nav-list";
+            <ul class="nav-list">
 
-    navigation.forEach(item => {
-
-        const listItem = document.createElement("li");
-
-        const link = document.createElement("a");
-
-        link.href = item.url;
-        link.textContent = item.name;
-
-        /* Automatically highlight current page */
-
-        if (currentPage === item.url) {
-            link.classList.add("active");
-            link.setAttribute("aria-current", "page");
-        }
-
-        listItem.appendChild(link);
-        list.appendChild(listItem);
-    });
-
-    nav.appendChild(list);
-
-    navContainer.appendChild(nav);
-}
+                <li>
+                    <a href="index.html"
+                       class="${currentPage === "index.html" ? "active" : ""}">
+                        Home
+                    </a>
+                </li>
 
 
-/* -----------------------------------------
-   INITIALIZE
-   ----------------------------------------- */
+                <li>
+                    <a href="about.html"
+                       class="${currentPage === "about.html" ? "active" : ""}">
+                        About
+                    </a>
+                </li>
 
-document.addEventListener("DOMContentLoaded", createNavigation);
-/* =========================================
-   GLITTER CURSOR EFFECT ✨
-   ========================================= */
 
-const glitterSymbols = ["✦", "✧", "⋆", "✶", "✷", "❋"];
+                <li>
+                    <a href="portfolio.html"
+                       class="${currentPage === "portfolio.html" ? "active" : ""}">
+                        Portfolio
+                    </a>
+                </li>
 
-let lastGlitter = 0;
 
-document.addEventListener("mousemove", function(event) {
+                <li>
+                    <a href="contact.html"
+                       class="${currentPage === "contact.html" ? "active" : ""}">
+                        Contact
+                    </a>
+                </li>
 
-    const now = Date.now();
+            </ul>
 
-    // Controls how often glitter appears
-    if (now - lastGlitter < 50) {
-        return;
-    }
+        </nav>
 
-    lastGlitter = now;
-
-    createGlitter(
-        event.clientX,
-        event.clientY
-    );
+    `;
 
 });
-
-
-function createGlitter(x, y) {
-
-    const glitter =
-        document.createElement("span");
-
-    glitter.className = "cursor-glitter";
-
-    // Pick a random sparkle
-    glitter.textContent =
-        glitterSymbols[
-            Math.floor(
-                Math.random() *
-                glitterSymbols.length
-            )
-        ];
-
-
-    // Put glitter where the cursor is
-    glitter.style.left = `${x}px`;
-    glitter.style.top = `${y}px`;
-
-
-    // Random movement after appearing
-    const moveX =
-        Math.random() * 60 - 30;
-
-    const moveY =
-        Math.random() * 60 - 30;
-
-
-    glitter.style.setProperty(
-        "--move-x",
-        `${moveX}px`
-    );
-
-    glitter.style.setProperty(
-        "--move-y",
-        `${moveY}px`
-    );
-
-
-    // Random size
-    const size =
-        Math.random() * 12 + 8;
-
-    glitter.style.fontSize =
-        `${size}px`;
-
-
-    document.body.appendChild(glitter);
-
-
-    // Remove glitter after animation
-    setTimeout(function() {
-
-        glitter.remove();
-
-    }, 900);
-
-}
