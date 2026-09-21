@@ -15,55 +15,46 @@
 
     <div class="site-wrapper">
 
-        <!-- =========================
-             HEADER
-        ========================== -->
-
+        <!-- HEADER -->
         <header class="site-header">
 
             <div class="header-top">
 
-                <!-- LOGO -->
+                <!-- Logo -->
                 <a href="index.html" class="logo">
                     Lindsay
                 </a>
 
-
-                <!-- INFORMATIONAL AREA -->
-                <div class="header-info">
-
-                    <p>
-                        Marketing, creativity, and strategy in one place.
-                    </p>
-
+                <!-- Short introduction -->
+                <div class="header-description">
+                    Marketing, creativity, and strategy in one place.
                 </div>
 
             </div>
 
 
             <!-- PRIMARY NAVIGATION -->
+            <!-- nav.js will create the navigation here -->
             <div id="navigation"></div>
-
 
         </header>
 
 
 
-        <!-- =========================
-             WEBSITE BODY
-        ========================== -->
+        <!-- MAIN WEBSITE CONTENT -->
 
-        <div class="website-layout">
+        <div class="content-grid">
 
 
-            <!-- LEFT NAVIGATION -->
+            <!-- LEFT SIDEBAR -->
+
             <aside class="left-sidebar">
 
-                <p class="sidebar-title">
+                <div class="sidebar-title">
                     Explore
-                </p>
+                </div>
 
-                <ul class="sidebar-nav">
+                <ul class="sidebar-links">
 
                     <li>
                         <a href="index.html">
@@ -95,31 +86,43 @@
 
 
 
-            <!-- =========================
-                 MAIN CONTENT
-            ========================== -->
+            <!-- MAIN CONTENT -->
 
             <main class="main-content">
 
 
-                <!-- HERO IMAGE -->
+                <!-- HERO -->
+
                 <section class="hero">
 
-                    <div class="hero-overlay">
+                    <div class="hero-content">
 
                         <p class="eyebrow">
                             MARKETING • DIGITAL • CREATIVE
                         </p>
 
                         <h1>
-                            Hello, I'm Lindsay.
+                            Hello, I'm <span>Lindsay.</span>
                         </h1>
 
                         <p>
-                            Marketing student passionate about digital
-                            marketing, creative strategy, and meaningful
-                            brand experiences.
+                            Welcome to my portfolio. Explore my experience,
+                            creative projects, marketing work, and the skills
+                            I've developed along the way.
                         </p>
+
+
+                        <div class="hero-buttons">
+
+                            <a href="about.html" class="button">
+                                About Me
+                            </a>
+
+                            <a href="portfolio.html" class="button button-outline">
+                                View My Portfolio
+                            </a>
+
+                        </div>
 
                     </div>
 
@@ -127,58 +130,111 @@
 
 
 
-                <!-- MAIN CONTENT AREA -->
+                <!-- ABOUT THE WEBSITE -->
 
-                <section class="content-section">
+                <section>
 
-                    <p class="eyebrow">
-                        WELCOME
-                    </p>
-
-                    <h2>
-                        Marketing with a creative and analytical perspective.
+                    <h2 class="content-title">
+                        A little about my work
                     </h2>
 
 
                     <p>
-                        I'm a marketing student at Iowa State University
-                        interested in digital marketing, content strategy,
-                        brand development, and creative storytelling. I enjoy
-                        finding ways to combine creative ideas with strategy
-                        and data to create marketing that connects with people.
+                        I'm a marketing student interested in
+                        <span class="keyword">digital marketing</span>,
+                        brand strategy, content creation, and finding creative
+                        ways to connect ideas with people.
                     </p>
 
 
                     <p>
-                        Through my academic experience, professional
-                        opportunities, and leadership roles, I've developed
-                        experience in areas including SEO, AEO, social media,
-                        content creation, email marketing, analytics, and
-                        brand management. My background has also given me an
-                        analytical perspective that helps me approach
-                        marketing problems from multiple angles.
+                        My background also gives me an analytical perspective,
+                        helping me approach projects with both creativity
+                        and problem-solving in mind.
                     </p>
 
 
                     <p>
-                        I'm especially interested in digital marketing and
-                        the ways brands can use content, technology, and
-                        strategy to create stronger connections with their
-                        audiences. This website highlights some of the work
-                        and experiences that have helped shape my interests
-                        and career goals.
+                        Through my coursework, professional experience, and
+                        leadership opportunities, I've developed experience
+                        in SEO, AEO, social media, content creation, email
+                        marketing, analytics, and brand management.
                     </p>
 
 
-                    <div class="content-buttons">
 
-                        <a href="about.html" class="button">
-                            Learn More About Me
-                        </a>
+                    <!-- THREE CARDS -->
 
-                        <a href="portfolio.html" class="button button-outline">
-                            View My Portfolio
-                        </a>
+                    <div class="card-grid">
+
+
+                        <article class="card">
+
+                            <div class="card-number">
+                                01
+                            </div>
+
+                            <h3>
+                                Marketing
+                            </h3>
+
+                            <p>
+                                Digital marketing, brand development,
+                                SEO, AEO, and content strategy.
+                            </p>
+
+                            <a href="portfolio.html" class="card-link">
+                                View my work →
+                            </a>
+
+                        </article>
+
+
+
+                        <article class="card">
+
+                            <div class="card-number">
+                                02
+                            </div>
+
+                            <h3>
+                                Creative Work
+                            </h3>
+
+                            <p>
+                                Social media, visual storytelling,
+                                design, and content creation.
+                            </p>
+
+                            <a href="portfolio.html" class="card-link">
+                                See my projects →
+                            </a>
+
+                        </article>
+
+
+
+                        <article class="card">
+
+                            <div class="card-number">
+                                03
+                            </div>
+
+                            <h3>
+                                Experience
+                            </h3>
+
+                            <p>
+                                Explore my professional experience,
+                                leadership, and marketing background.
+                            </p>
+
+                            <a href="about.html" class="card-link">
+                                Learn more →
+                            </a>
+
+                        </article>
+
 
                     </div>
 
@@ -187,116 +243,17 @@
 
             </main>
 
-
-
-            <!-- =========================
-                 RIGHT STICKY CONTENT
-            ========================== -->
-
-            <aside class="right-sidebar">
-
-                <div class="sticky-content">
-
-                    <p class="sidebar-title">
-                        Quick Links
-                    </p>
-
-
-                    <div class="side-card">
-
-                        <h3>
-                            My Work
-                        </h3>
-
-                        <p>
-                            Explore marketing projects, creative work,
-                            and professional experience.
-                        </p>
-
-                        <a href="portfolio.html">
-                            View Portfolio →
-                        </a>
-
-                    </div>
-
-
-                    <div class="side-card">
-
-                        <h3>
-                            About Me
-                        </h3>
-
-                        <p>
-                            Learn more about my background, education,
-                            and marketing interests.
-                        </p>
-
-                        <a href="about.html">
-                            Learn More →
-                        </a>
-
-                    </div>
-
-
-                    <div class="side-card">
-
-                        <h3>
-                            Let's Connect
-                        </h3>
-
-                        <p>
-                            Interested in connecting or learning more
-                            about my work?
-                        </p>
-
-                        <a href="contact.html">
-                            Contact Me →
-                        </a>
-
-                    </div>
-
-
-                    <!-- SOCIAL LINKS -->
-
-                    <div class="social-links">
-
-                        <p class="sidebar-title">
-                            Connect
-                        </p>
-
-                        <a href="#" target="_blank">
-                            LinkedIn
-                        </a>
-
-                        <a href="#" target="_blank">
-                            GitHub
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </aside>
-
-
         </div>
 
 
 
-        <!-- =========================
-             FOOTER
-        ========================== -->
+        <!-- FOOTER -->
 
         <footer class="site-footer">
 
-            <div>
-
-                <p>
-                    © 2026 Lindsay
-                </p>
-
-            </div>
-
+            <p>
+                © 2026 Lindsay
+            </p>
 
             <div class="footer-links">
 
@@ -318,15 +275,6 @@
 
             </div>
 
-
-            <div>
-
-                <a href="contact.html">
-                    Contact Me
-                </a>
-
-            </div>
-
         </footer>
 
 
@@ -334,10 +282,9 @@
 
 
 
-    <!-- NAVIGATION JAVASCRIPT -->
+    <!-- JAVASCRIPT NAVIGATION -->
 
     <script src="nav.js"></script>
-
 
 </body>
 
