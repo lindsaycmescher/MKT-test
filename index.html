@@ -3,447 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Lindsay | Portfolio</title>
 
-    <style>
-        :root {
-            --background: #f7f7f5;
-            --surface: #ffffff;
-            --soft: #f1eee9;
-            --accent: #d98fa8;
-            --accent-dark: #a95f78;
-            --text: #333333;
-            --muted: #707070;
-            --border: #e4e0dc;
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            color: var(--text);
-            background: var(--background);
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-        }
-
-        .site-wrapper {
-            width: min(1100px, 92vw);
-            min-height: 100vh;
-            margin: 0 auto;
-            background: var(--surface);
-            border-left: 1px solid var(--border);
-            border-right: 1px solid var(--border);
-        }
-
-        /* HEADER */
-        .site-header {
-            border-bottom: 1px solid var(--border);
-        }
-
-        .header-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 28px 42px;
-        }
-
-        .logo {
-            color: var(--accent-dark);
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-        }
-
-        .header-description {
-            max-width: 520px;
-            color: var(--muted);
-            font-size: 0.9rem;
-            text-align: right;
-        }
-
-        /* NAVIGATION */
-        .primary-nav {
-            border-top: 1px solid var(--border);
-            background: var(--surface);
-        }
-
-        .nav-list {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-list a {
-            display: block;
-            padding: 13px 20px;
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s ease, background 0.2s ease;
-        }
-
-        .nav-list a:hover,
-        .nav-list a.active {
-            color: var(--accent-dark);
-            background: var(--soft);
-        }
-
-        /* CONTENT */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            min-height: 600px;
-        }
-
-        .left-sidebar {
-            padding: 35px 22px;
-            background: #faf9f7;
-            border-right: 1px solid var(--border);
-        }
-
-        .sidebar-title {
-            margin: 0 0 18px;
-            color: var(--accent-dark);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-        }
-
-        .sidebar-links {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .sidebar-links li {
-            margin-bottom: 5px;
-        }
-
-        .sidebar-links a {
-            display: block;
-            padding: 8px 10px;
-            color: var(--muted);
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.88rem;
-            transition: 0.2s ease;
-        }
-
-        .sidebar-links a:hover {
-            color: var(--accent-dark);
-            background: var(--soft);
-        }
-
-        .main-content {
-            padding: 42px;
-        }
-
-        /* HERO */
-        .hero {
-            display: flex;
-            align-items: center;
-            min-height: 310px;
-            padding: 55px;
-            margin-bottom: 45px;
-            background: #f8f3f1;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-        }
-
-        .hero-content {
-            max-width: 680px;
-        }
-
-        .hero h1 {
-            margin: 0 0 12px;
-            color: var(--text);
-            font-size: clamp(2.3rem, 5vw, 4rem);
-            line-height: 1.1;
-        }
-
-        .hero h1 span {
-            color: var(--accent-dark);
-        }
-
-        .hero p {
-            max-width: 580px;
-            margin: 0 0 25px;
-            color: var(--muted);
-            font-size: 1rem;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 18px;
-            color: white;
-            background: var(--accent-dark);
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: 0.2s ease;
-        }
-
-        .button:hover {
-            background: #8e4f65;
-            transform: translateY(-1px);
-        }
-
-        /* INTRO */
-        .content-title {
-            margin: 0 0 12px;
-            color: var(--text);
-            font-size: 1.7rem;
-        }
-
-        .main-content p {
-            color: var(--muted);
-        }
-
-        .keyword {
-            color: var(--accent-dark);
-            font-weight: 600;
-        }
-
-        /* CARDS */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            margin-top: 30px;
-        }
-
-        .card {
-            padding: 22px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            transition: 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-3px);
-            border-color: #d5c2c8;
-        }
-
-        .card h3 {
-            margin: 0 0 8px;
-            color: var(--text);
-            font-size: 1rem;
-        }
-
-        .card p {
-            margin: 0;
-            font-size: 0.88rem;
-        }
-
-        /* FOOTER */
-        .site-footer {
-            padding: 22px 30px;
-            border-top: 1px solid var(--border);
-            color: var(--muted);
-            text-align: center;
-            font-size: 0.8rem;
-        }
-
-        .site-footer a {
-            color: var(--accent-dark);
-        }
-
-        /* MOBILE */
-        @media (max-width: 800px) {
-            .header-top {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-                padding: 25px;
-            }
-
-            .header-description {
-                text-align: left;
-            }
-
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .left-sidebar {
-                border-right: none;
-                border-bottom: 1px solid var(--border);
-                padding: 20px 25px;
-            }
-
-            .sidebar-links {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 5px;
-            }
-
-            .sidebar-links li {
-                margin: 0;
-            }
-
-            .main-content {
-                padding: 25px;
-            }
-
-            .hero {
-                min-height: 260px;
-                padding: 35px;
-            }
-
-            .card-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 550px) {
-            .nav-list {
-                flex-wrap: wrap;
-            }
-
-            .nav-list a {
-                padding: 10px 12px;
-            }
-
-            .hero {
-                padding: 28px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<div class="site-wrapper">
+    <div class="site-wrapper">
 
-    <header class="site-header">
+        <!-- HEADER -->
+        <header class="site-header">
 
-        <div class="header-top">
-            <a href="index.html" class="logo">Lindsay</a>
+            <div class="header-top">
 
-            <div class="header-description">
-                Marketing, creativity, and strategy in one place.
+                <a href="index.html" class="logo">
+                    Lindsay
+                </a>
+
+                <p class="header-description">
+                    Marketing, creativity, and strategy in one place.
+                </p>
+
             </div>
-        </div>
 
-        <nav class="primary-nav">
-            <ul class="nav-list">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="products.html">Work</a></li>
-                <li><a href="skills.html">Skills</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+            <!-- Navigation is added by nav.js -->
+            <div id="navigation"></div>
 
-    </header>
+        </header>
 
-    <div class="content-grid">
 
-        <aside class="left-sidebar">
-            <div class="sidebar-title">Explore</div>
+        <!-- MAIN CONTENT -->
+        <main>
 
-            <ul class="sidebar-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="products.html">Projects</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </aside>
-
-        <main class="main-content">
-
+            <!-- HERO -->
             <section class="hero">
-                <div class="hero-content">
-                    <h1>Hello, I'm <span>Lindsay.</span></h1>
 
-                    <p>
-                        Welcome to my portfolio. Explore my experience,
-                        creative projects, marketing work, and the skills
-                        I've developed along the way.
+                <div class="hero-content">
+
+                    <p class="eyebrow">
+                        MARKETING • CREATIVE • DIGITAL
                     </p>
 
-                    <a href="products.html" class="button">
-                        View My Work
-                    </a>
+                    <h1>
+                        Hello, I'm <span>Lindsay.</span>
+                    </h1>
+
+                    <p class="hero-text">
+                        I'm a marketing student interested in digital marketing,
+                        content strategy, brand development, and creative storytelling.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="about.html" class="button button-primary">
+                            About Me
+                        </a>
+
+                        <a href="portfolio.html" class="button button-secondary">
+                            View My Portfolio
+                        </a>
+
+                    </div>
+
                 </div>
+
             </section>
 
-            <section>
-                <h2 class="content-title">A little about my work</h2>
 
-                <p>
-                    I'm a marketing student interested in
-                    <span class="keyword">digital marketing</span>,
-                    brand strategy, content creation, and finding creative
-                    ways to connect ideas with people.
-                </p>
+            <!-- INTRODUCTION -->
+            <section class="intro-section">
 
-                <p>
-                    My background also gives me an analytical perspective,
-                    helping me approach projects with both creativity
-                    and problem-solving in mind.
-                </p>
+                <div class="section-heading">
 
-                <div class="card-grid">
+                    <p class="eyebrow">
+                        A LITTLE ABOUT MY WORK
+                    </p>
 
-                    <article class="card">
-                        <h3>Marketing</h3>
-                        <p>
-                            Brand development, digital marketing,
-                            SEO, and content strategy.
-                        </p>
-                    </article>
-
-                    <article class="card">
-                        <h3>Creative Work</h3>
-                        <p>
-                            Social media, visual storytelling,
-                            design, and content creation.
-                        </p>
-                    </article>
-
-                    <article class="card">
-                        <h3>Experience</h3>
-                        <p>
-                            Explore my projects, leadership experience,
-                            and professional work.
-                        </p>
-                    </article>
+                    <h2>
+                        Creative ideas backed by an analytical mindset.
+                    </h2>
 
                 </div>
+
+                <div class="intro-content">
+
+                    <p>
+                        I'm a marketing student at Iowa State University with
+                        an interest in digital marketing, brand strategy,
+                        content creation, and finding creative ways to connect
+                        ideas with people.
+                    </p>
+
+                    <p>
+                        My background has also given me an analytical perspective,
+                        allowing me to approach marketing projects with both
+                        creativity and problem-solving in mind.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- THREE FEATURE CARDS -->
+            <section class="card-section">
+
+                <article class="card">
+
+                    <div class="card-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Digital Marketing
+                    </h3>
+
+                    <p>
+                        SEO, AEO, content strategy, email marketing,
+                        analytics, and digital campaigns.
+                    </p>
+
+                    <a href="portfolio.html" class="card-link">
+                        Explore my work →
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Creative Work
+                    </h3>
+
+                    <p>
+                        Social media, visual storytelling, content creation,
+                        design, and brand development.
+                    </p>
+
+                    <a href="portfolio.html" class="card-link">
+                        See my projects →
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Experience
+                    </h3>
+
+                    <p>
+                        Explore my professional experience, leadership,
+                        projects, and marketing background.
+                    </p>
+
+                    <a href="about.html" class="card-link">
+                        Learn more →
+                    </a>
+
+                </article>
+
             </section>
 
         </main>
 
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+
+            <p>
+                © 2026 Lindsay
+            </p>
+
+            <a href="contact.html">
+                Get in touch →
+            </a>
+
+        </footer>
+
     </div>
 
-    <footer class="site-footer">
-        <p>
-            © 2026 Lindsay ·
-            <a href="contact.html">Contact</a>
-        </p>
-    </footer>
 
-</div>
+    <!-- Navigation JavaScript -->
+    <script src="nav.js"></script>
 
 </body>
 </html>
